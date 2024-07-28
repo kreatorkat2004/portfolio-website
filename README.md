@@ -74,6 +74,6 @@ If you have any questions, suggestions, or just want to say hi, feel free to con
 
 - **Email:** aw80@rice.edu
 - **LinkedIn:** [https://www.linkedin.com/in/xianxi04](https://www.linkedin.com/in/xianxi04)
-- **GitHub:** [yourusername](https://www.github.com/kreatorkat2004)
+- **GitHub:** [https://www.github.com/kreatorkat2004](https://www.github.com/kreatorkat2004)
 
 Thank you for visiting my portfolio!
