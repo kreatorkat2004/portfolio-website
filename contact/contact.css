@@ -6,29 +6,55 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to top, #02AABD, #00CDAC);
     color: #fff;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: auto; 
+    overflow-y: auto; 
     min-height: 100vh;
+    min-width: 100vw; 
     font-size: 0.8em;
+    position: relative;
+    padding-bottom: 50px; 
 }
 
 header {
     background-color: #000;
+    width: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; 
 }
 
 .nav-list {
     display: flex;
     align-items: center;
     height: 60px;
-    padding: 0;
+    padding: 0 20px; 
     margin: 0;
     list-style: none;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; 
     justify-content: space-between;
+    width: 100%;
 }
 
 .logo-icon, .nav-icon, .social-icon {
@@ -80,10 +106,9 @@ header {
 }
 
 .social-links {
-    margin-left: auto;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .social-links a {
@@ -102,18 +127,21 @@ header {
 
 main {
     display: flex;
-    justify-content: space-between; /* Distribute space between left and right columns */
+    justify-content: space-between; 
     align-items: flex-start;
-    height: 100%;
-    padding: 2vw; /* Add padding on all sides */
+    height: calc(100vh - 60px); 
+    padding: 2vw; 
+    padding-top: 80px; 
     padding-bottom: 5vh;
     position: relative;
-    overflow: auto; /* Ensure the content is scrollable */
+    overflow: auto; 
+    min-width: 1200px; 
+    min-height: 800px; 
 }
 
 .left-column,
 .right-column {
-    width: 45%; /* Reduce width to increase space on the sides */
+    width: 45%; 
     padding: 2vw;
 }
 
@@ -202,9 +230,9 @@ main {
 
 .large-social-links {
     display: flex;
-    justify-content: space-around; /* Distribute space between the buttons */
-    width: 100%; /* Make sure the container takes full width */
-    margin-top: 2vh; /* Add spacing above the buttons */
+    justify-content: space-around; 
+    width: 100%; 
+    margin-top: 2vh; 
 }
 
 .large-social-icon {
@@ -251,6 +279,34 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    left: 0; 
+}
+
+.horizontal-scrollbar {
+    height: 10px;
+    background: #f1f1f1;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    overflow-x: scroll;
+    z-index: 9999; 
+}
+
+.horizontal-scrollbar::-webkit-scrollbar {
+    height: 10px;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 @media (max-width: 768px) {

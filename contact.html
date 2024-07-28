@@ -6,6 +6,24 @@
     <title>Contact Me - Aaron Wu</title>
     <link rel="stylesheet" href="contact/contact.css">
     <link rel="stylesheet" href="https://use.typekit.net/your-font-kit-id.css">
+    <style>
+        ::-webkit-scrollbar {
+          width: 10px;
+          height: 10px; 
+        }
+
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -92,9 +110,24 @@
             </section>
         </div>
     </main>
+    <div class="horizontal-scrollbar"></div> 
     <footer>
         <p>&copy; 2024 Aaron Wu</p>
     </footer>
     <script src="contact/contact.js"></script>
+    <script>
+        const mainContent = document.querySelector('main');
+        const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
+
+        horizontalScrollbar.style.width = mainContent.scrollWidth + 'px';
+
+        horizontalScrollbar.addEventListener('scroll', () => {
+            mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
+        });
+
+        mainContent.addEventListener('scroll', () => {
+            horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
+        });
+    </script>
 </body>
 </html>

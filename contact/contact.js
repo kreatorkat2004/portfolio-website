@@ -8,4 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeInText.querySelectorAll('span').forEach((span, index) => {
         span.style.animationDelay = `${index * 0.2}s`;
     });
+
+    const mainContent = document.querySelector('main');
+    const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
+
+    horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
+
+    horizontalScrollbar.addEventListener('scroll', () => {
+        mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
+    });
+
+    mainContent.addEventListener('scroll', () => {
+        horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
+    });
 });
