@@ -16,85 +16,64 @@ Welcome to my personal portfolio! This portfolio showcases my skills, projects, 
 
 ## Features
 
-- **Homepage:** An introduction to who I am and what I do.
+- **Home:** An introduction to who I am and what I do.
 - **About Me:** A detailed section about my background, skills, and interests.
+- **Work Experiences:** A showcase of my work experiences with descriptions and technologies used
 - **Projects:** A showcase of my projects with descriptions, technologies used, and links to the live demos and source code.
-- **Blog:** Articles and tutorials on various topics related to software development and data analysis.
 - **Contact:** A form to get in touch with me.
 
 ## Installation
 
-To set up the portfolio locally, follow these steps:
+To set up the portfolio locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/yourusername/portfolio-website.git
    ```
-
-2. **Navigate to the project directory:**
-   ```bash
-   cd portfolio
-   ```
-
-3. **Install dependencies:**
-   If using Node.js:
-   ```bash
-   npm install
-   ```
-   If using Python (for a Flask-based portfolio):
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-### Running the Portfolio
-
-For a Node.js-based portfolio:
-```bash
-npm start
-```
-
-For a Python/Flask-based portfolio:
-```bash
-flask run
-```
 
 ### Viewing the Portfolio
 
-Open your web browser and go to `http://localhost:3000` (or the respective port your framework uses).
+Open your web browser and go to `http://aaron-wu.com'.
 
 ## Project Structure
 
 ```plaintext
-portfolio/
-├── public/
-│   ├── assets/
-│   ├── index.html
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── App.js
-│   ├── index.js
-├── .gitignore
-├── package.json
+portfolio-website/
+├── home/
+│   ├── home.css
+│   ├── home.js
+├── about/
+│   ├── about.css
+│   ├── about.js
+├── work/
+│   ├── work.css
+│   ├── work.js
+├── projects/
+│   ├── projects.css
+│   ├── projects.js
+├── contact/
+│   ├── contact.css
+│   ├── contact.js
+├── index.html
+├── about.html
+├── work.html
+├── projects.html
+├── contact.html
 └── README.md
 ```
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript, React.js
-- **Backend:** Node.js, Express.js (or Python, Flask)
-- **Database:** MongoDB (or any other database)
+- **Frontend:** HTML, CSS, JavaScript
 - **Version Control:** Git
-- **Deployment:** Vercel, Heroku, or any other platform
+- **Deployment:** Hostinger
 
 ## Contact
 
 If you have any questions, suggestions, or just want to say hi, feel free to contact me:
 
-- **Email:** your.email@example.com
-- **LinkedIn:** [your-profile](https://linkedin.com/in/yourprofile)
-- **GitHub:** [yourusername](https://github.com/yourusername)
+- **Email:** aw80@rice.edu
+- **LinkedIn:** [your-profile](https://linkedin.com/in/xianxi04)
+- **GitHub:** [yourusername](https://github.com/kreatorkat2004)
 
 Thank you for visiting my portfolio!
