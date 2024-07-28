@@ -27,32 +27,31 @@ body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to top, #02AABD, #00CDAC);
     color: #fff;
-    overflow-x: auto; 
-    overflow-y: auto; 
+    overflow: auto;
     min-height: 100vh;
-    min-width: 100vw; 
+    min-width: 100vw;
     font-size: 0.8em;
     position: relative;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
 }
 
 header {
     background-color: #000;
-    width: 100%; 
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .nav-list {
     display: flex;
     align-items: center;
     height: 60px;
-    padding: 0 20px; 
+    padding: 0 20px;
     margin: 0;
     list-style: none;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
     justify-content: space-between;
     width: 100%;
 }
@@ -127,21 +126,21 @@ header {
 
 main {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: flex-start;
-    height: calc(100vh - 60px); 
-    padding: 2vw; 
-    padding-top: 80px; 
+    height: calc(100vh - 60px);
+    padding: 2vw;
+    padding-top: 80px;
     padding-bottom: 5vh;
     position: relative;
-    overflow: auto; 
-    min-width: 1200px; 
-    min-height: 800px; 
+    overflow: auto;
+    min-width: 1200px;
+    min-height: 800px;
 }
 
 .left-column,
 .right-column {
-    width: 45%; 
+    flex: 0 0 45%;
     padding: 2vw;
 }
 
@@ -161,11 +160,12 @@ main {
 }
 
 .contact-section form {
+    width: 600px;
+    max-width: 600px;
+    min-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    max-width: 60vw;
     margin: 0 auto;
     background: #1E1E1E;
     padding: 2vw;
@@ -230,14 +230,14 @@ main {
 
 .large-social-links {
     display: flex;
-    justify-content: space-around; 
-    width: 100%; 
-    margin-top: 2vh; 
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2vh;
 }
 
 .large-social-icon {
-    width: 12vw;
-    height: 12vw;
+    width: 50px;
+    height: 50px;
 }
 
 .large-social-icon:hover {
@@ -279,18 +279,7 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
-    left: 0; 
-}
-
-.horizontal-scrollbar {
-    height: 10px;
-    background: #f1f1f1;
-    position: fixed;
-    bottom: 20px;
     left: 0;
-    right: 0;
-    overflow-x: scroll;
-    z-index: 9999; 
 }
 
 .horizontal-scrollbar::-webkit-scrollbar {
@@ -322,11 +311,24 @@ footer {
         gap: 2vh;
     }
     .large-social-icon {
-        width: 8vw;
-        height: 8vw;
+        width: 50px;
+        height: 50px;
     }
     .contact-section form {
-        max-width: 100%;
+        width: 600px;
+        max-width: 600px;
+        min-width: 600px;
+    }
+    .logo {
+        display: none; /* Hide logo on small screens */
+    }
+    .nav-item-container,
+    .social-links {
+        display: none; /* Hide nav items on small screens */
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on small screens */
+        cursor: pointer;
     }
 }
 
@@ -336,22 +338,37 @@ footer {
 }
 
 .hamburger-icon {
-    width: 3vw;
-    height: 3vw;
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height */
 }
 
 .dropdown-menu {
     display: none;
     flex-direction: column;
     background-color: #000;
-    position: absolute;
-    top: 60px;
+    position: fixed; /* Changed to fixed to cover entire screen */
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%; /* Full height */
     z-index: 1000;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    padding: 20px;
 }
 
 .dropdown-menu.show {
     display: flex;
+}
+
+.dropdown-logo {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.dropdown-logo .logo-icon {
+    width: 50px;
+    height: 50px;
 }
 
 .dropdown-menu .nav-item {

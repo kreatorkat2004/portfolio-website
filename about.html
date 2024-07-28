@@ -6,6 +6,24 @@
     <title>About Me - Aaron Wu</title>
     <link rel="stylesheet" href="about/about.css">
     <link rel="stylesheet" href="https://use.typekit.net/your-font-kit-id.css">
+    <style>
+        ::-webkit-scrollbar {
+          width: 10px;
+          height: 10px; 
+        }
+
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -53,18 +71,65 @@
                         <img src="images/chess.png" alt="Chess.com" class="social-icon">
                     </a>
                 </li>
+                <li class="hamburger-menu">
+                    <img src="images/three.png" alt="Menu" class="hamburger-icon">
+                </li>
+            </ul>
+            <ul class="dropdown-menu">
+                <li class="dropdown-logo">
+                    <img src="images/A.png" alt="Logo" class="logo-icon">
+                </li>
+                <li>
+                    <a href="index.html" aria-label="Home" class="nav-item">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" aria-label="About Me" class="nav-item">
+                        About Me
+                    </a>
+                </li>
+                <li>
+                    <a href="work.html" aria-label="Work Experiences" class="nav-item">
+                        Work Experiences
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html" aria-label="Projects" class="nav-item">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" aria-label="Contact Me" class="nav-item">
+                        Contact Me
+                    </a>
+                </li>
+                <li class="social-links-dropdown">
+                    <a href="https://www.linkedin.com/in/xianxi04" target="_blank" aria-label="LinkedIn">
+                        LinkedIn
+                    </a>
+                    <a href="https://www.github.com/kreatorkat2004" target="_blank" aria-label="GitHub">
+                        GitHub
+                    </a>
+                    <a href="https://www.instagram.com/pandachessaaron/" target="_blank" aria-label="Instagram">
+                        Instagram
+                    </a>
+                    <a href="https://www.chess.com/member/kreatorkat123" target="_blank" aria-label="Chess.com">
+                        Chess.com
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="left-column">
             <section class="intro1">
-                <h1 class="fade-in-left">About Me</h1>
-                <p class="pop-out">I am a dedicated software engineer and data analyst with the ability to work in collaborative environments, navigate complex challenges, and a passion for leveraging technology to solve real-world problems.</p>
+                <h1 class="fade-in-left-letter-by-letter">About Me</h1>
+                <p class="pop-in">I am a dedicated software engineer and data analyst with the ability to work in collaborative environments, navigate complex challenges, and a passion for leveraging technology to solve real-world problems.</p>
             </section>
             <section class="skills-section">
-                <h2 class="pop-out" style="color: #FFBF00;">Skills</h2>
-                <div class="skill-buttons pop-out">
+                <h2 class="pop-in" style="color: #FFBF00;">Skills</h2>
+                <div class="skill-buttons pop-in">
                     <button onclick="showSkills('Languages')">Languages</button>
                     <button onclick="showSkills('Frameworks')">Frameworks</button>
                     <button onclick="showSkills('Tools')">Tools</button>
@@ -78,9 +143,109 @@
             <div class="bubbles-container"></div>
         </div>
     </main>
+    <div class="horizontal-scrollbar"></div>
     <footer>
         <p>&copy; 2024 Aaron Wu</p>
     </footer>
     <script src="about/about.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainContent = document.querySelector('main');
+            const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
+
+            horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
+
+            horizontalScrollbar.addEventListener('scroll', () => {
+                mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
+            });
+
+            mainContent.addEventListener('scroll', () => {
+                horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
+            });
+
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            hamburgerMenu.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('show');
+            });
+
+            const fadeInText = document.querySelector('.fade-in-left-letter-by-letter');
+            const text = fadeInText.innerText.replace('\n', ''); 
+            fadeInText.innerHTML = text.split('').map(letter => {
+                if (letter === ' ') return ' ';
+                return `<span>${letter}</span>`;
+            }).join('');
+            fadeInText.querySelectorAll('span').forEach((span, index) => {
+                span.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            showSkills('Languages'); 
+        });
+
+        const skillsData = {
+            Languages: [
+                { name: "Python", time: 4, color: "#34568B" },
+                { name: "Java", time: 4, color: "#FF6F61" },
+                { name: "SQL", time: 4, color: "#6B5B95" },
+                { name: "R", time: 3, color: "#88B04B" },
+                { name: "JavaScript", time: 3, color: "#F7CAC9" },
+                { name: "HTML/CSS", time: 3, color: "#92A8D1" },
+                { name: "C", time: 1, color: "#955251" }
+            ],
+            Frameworks: [
+                { name: "Django", time: 3, color: "#B565A7" },
+                { name: "Flask", time: 2, color: "#009B77" },
+                { name: "Springboot", time: 1.5, color: "#DD4124" },
+                { name: "Node.js", time: 1.5, color: "#D65076" },
+                { name: "React.js", time: 1.5, color: "#45B8AC" }
+            ],
+            Tools: [
+                { name: "PostgreSQL", time: 3, color: "#7FCDCD" },
+                { name: "PowerBI", time: 3, color: "#8BC34A" },
+                { name: "Git", time: 2, color: "#5B5EA6" },
+                { name: "AWS", time: 1.5, color: "#9B2335" },
+                { name: "Spark", time: 1.5, color: "#DFCFBE" },
+                { name: "Hadoop", time: 1.5, color: "#55B4B0" },
+                { name: "Docker", time: 1.5, color: "#E15D44" }
+            ],
+
+            Libraries: [
+                { name: "Data Manipulation and Analysis Libraries (NumPy, Pandas)", time: 3, color: "#BC243C" },
+                { name: "Data Visualization Libraries (Matplotlib, Plotly, Shiny, Ggplot)", time: 2, color: "#C3447A" },
+                { name: "Machine Learning Libraries (PyTorch, Scikit-learn, Tensorflow)", time: 1.5, color: "#98B4D4" }
+            ]
+        };
+
+        function showSkills(type) {
+            const skillsContainer = document.querySelector('.skills');
+            skillsContainer.innerHTML = ''; 
+
+            skillsData[type].sort((a, b) => b.time - a.time).forEach(skill => {
+                const skillElement = document.createElement('div');
+                skillElement.classList.add('skill');
+                skillElement.innerHTML = `
+                    <span>${skill.name}: ${skill.time} years</span>
+                    <div class="progress-bar" style="width: ${skill.time * 20}%; background-color: ${skill.color};"></div>
+                `;
+                skillsContainer.appendChild(skillElement);
+            });
+
+            generateBubbles(skillsData[type].length);
+        }
+
+        function generateBubbles(count) {
+            const bubblesContainer = document.querySelector('.bubbles-container');
+            bubblesContainer.innerHTML = '';
+
+            for (let i = 0; i < count; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                bubble.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                bubble.style.animationDelay = `${Math.random() * 2}s`;
+                bubble.style.top = `${Math.random() * 90 + 5}%`;
+                bubblesContainer.appendChild(bubble);
+            }
+        }
+    </script>
 </body>
 </html>

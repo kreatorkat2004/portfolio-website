@@ -76,6 +76,9 @@
                 </li>
             </ul>
             <ul class="dropdown-menu">
+                <li class="dropdown-logo">
+                    <img src="images/A.png" alt="Logo" class="logo-icon">
+                </li>
                 <li>
                     <a href="index.html" aria-label="Home" class="nav-item">
                         Home
@@ -160,19 +163,6 @@
     </footer>
     <script src="contact/contact.js"></script>
     <script>
-        const mainContent = document.querySelector('main');
-        const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
-
-        horizontalScrollbar.style.width = mainContent.scrollWidth + 'px';
-
-        horizontalScrollbar.addEventListener('scroll', () => {
-            mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
-        });
-
-        mainContent.addEventListener('scroll', () => {
-            horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
-        });
-
         document.addEventListener('DOMContentLoaded', () => {
             const fadeInText = document.querySelector('.fade-in-left-letter-by-letter');
             const text = fadeInText.innerText.replace('\n', ''); 
@@ -183,6 +173,9 @@
             fadeInText.querySelectorAll('span').forEach((span, index) => {
                 span.style.animationDelay = `${index * 0.2}s`;
             });
+
+            const mainContent = document.querySelector('main');
+            const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
 
             horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
 
