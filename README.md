@@ -73,7 +73,7 @@ portfolio-website/
 If you have any questions, suggestions, or just want to say hi, feel free to contact me:
 
 - **Email:** aw80@rice.edu
-- **LinkedIn:** [your-profile](https://linkedin.com/in/xianxi04)
-- **GitHub:** [yourusername](https://github.com/kreatorkat2004)
+- **LinkedIn:** [https://www.linkedin.com/in/xianxi04](https://www.linkedin.com/in/xianxi04)
+- **GitHub:** [yourusername](https://www.github.com/kreatorkat2004)
 
 Thank you for visiting my portfolio!
