@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #02AABD, #00CDAC);
+    color: #fff;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    min-height: 100vh;
+    font-size: 0.8em;
+}
+
+header {
+    background-color: #000;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo-icon, .nav-icon, .social-icon {
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.logo-icon {
+    height: 2.5vw;
+    vertical-align: middle;
+}
+
+.nav-item {
+    color: #999;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.nav-icon {
+    width: 2.5vw;
+    height: 2.5vw;
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: width 0.3s, height 0.3s;
+}
+
+.nav-item:hover {
+    background-color: #2A9D8F;
+    color: #fff;
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .nav-icon {
+        width: 2.2vw;
+        height: 2.2vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-icon {
+        width: 2vw;
+        height: 2vw;
+    }
+}
+
+.social-links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    margin-left: 10px;
+}
+
+.social-icon {
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+main {
+    display: flex;
+    justify-content: space-between; /* Distribute space between left and right columns */
+    align-items: flex-start;
+    height: 100%;
+    padding: 2vw; /* Add padding on all sides */
+    padding-bottom: 5vh;
+    position: relative;
+    overflow: auto; /* Ensure the content is scrollable */
+}
+
+.left-column,
+.right-column {
+    width: 45%; /* Reduce width to increase space on the sides */
+    padding: 2vw;
+}
+
+.contact-section {
+    text-align: left;
+}
+
+.contact-section h1 {
+    font-size: 4em;
+    color: #FFD700;
+    margin-bottom: 2vh;
+}
+
+.contact-section p {
+    font-size: 1em;
+    color: #fff;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 60vw;
+    margin: 0 auto;
+    background: #1E1E1E;
+    padding: 2vw;
+    border-radius: 1vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-section .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+    width: 100%;
+}
+
+.contact-section label {
+    margin-bottom: 0.5vh;
+    font-size: 1em;
+    color: #fff;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 1.5vh;
+    border: 0.2vh solid #2A9D8F;
+    border-radius: 0.5vh;
+    font-size: 1em;
+    margin-bottom: 1vh;
+    transition: border-color 0.3s;
+    background: #333;
+    color: #fff;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: #CD0021;
+    outline: none;
+}
+
+.contact-section input[type="submit"] {
+    background-color: #CD0021;
+    color: #fff;
+    padding: 1.5vh 3vw;
+    border: none;
+    border-radius: 0.5vh;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.2em;
+    align-self: center;
+}
+
+.contact-section input[type="submit"]:hover {
+    background-color: #F4A261;
+    transform: scale(1.05);
+}
+
+.thanks-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.large-social-links {
+    display: flex;
+    justify-content: space-around; /* Distribute space between the buttons */
+    width: 100%; /* Make sure the container takes full width */
+    margin-top: 2vh; /* Add spacing above the buttons */
+}
+
+.large-social-icon {
+    width: 12vw;
+    height: 12vw;
+}
+
+.large-social-icon:hover {
+    transform: scale(1.2);
+}
+
+.pop-in {
+    animation: popIn 2s ease forwards;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-left-letter-by-letter span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInLetter 1s forwards;
+}
+
+@keyframes fadeInLetter {
+    to {
+        opacity: 1;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1vh;
+    background-color: #1f1f1f;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .social-links {
+        margin-top: 1vh;
+    }
+    .large-social-links {
+        flex-direction: row;
+        gap: 2vh;
+    }
+    .large-social-icon {
+        width: 8vw;
+        height: 8vw;
+    }
+    .contact-section form {
+        max-width: 100%;
+    }
+}

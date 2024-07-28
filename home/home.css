@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #02AABD, #00CDAC);
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #000;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+
+.logo-icon, .nav-icon, .social-icon {
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.logo-icon {
+    height: 2.5vw; 
+    vertical-align: middle;
+}
+
+.nav-item {
+    color: #999;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    flex-shrink: 0; 
+    margin-right: 5px; 
+}
+
+.nav-icon {
+    width: 2.5vw; 
+    height: 2.5vw; 
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: width 0.3s, height 0.3s; 
+}
+
+.nav-item:hover {
+    background-color: #2A9D8F;
+    color: #fff;
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .nav-icon {
+        width: 2.2vw;
+        height: 2.2vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-icon {
+        width: 2vw;
+        height: 2vw;
+    }
+}
+
+.social-links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.social-links a {
+    margin-left: 10px;
+}
+
+.social-icon {
+    width: 2.5vw; 
+    height: 2.5vw; 
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-bottom: 5vh; 
+    position: relative;
+}
+
+.left-column,
+.right-column {
+    width: 50%;
+    padding: 2vw; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+}
+
+.intro {
+    text-align: left;
+}
+
+.intro h1 {
+    font-size: 3em; 
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 0.1em; 
+}
+
+.intro h1 img.letter-a {
+    width: 2em; 
+    height: auto;
+    vertical-align: bottom;
+    margin-right: 0.2em;
+    background: transparent;
+    opacity: 1; /* Ensure the "A" is visible */
+}
+
+.intro p.aspiring, .intro p.subtitle {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2em; 
+    line-height: 1.5em;
+    color: #fff;
+}
+
+.intro p.subtitle {
+    font-size: 1em; /* Shrink the font size */
+    margin-top: 2vh;
+}
+
+.contact-button {
+    background-color: transparent;
+    color: #BF953F;
+    padding: 2vh 4vw; 
+    text-decoration: none;
+    border: 0.2vh solid #BF953F; 
+    border-radius: 0.5vh; 
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.5em;
+    margin-top: auto; /* Push the button to the bottom */
+    align-self: center; /* Center the button horizontally */
+}
+
+.contact-button:hover {
+    background-color: #f4a261;
+    transform: scale(1.05);
+}
+
+.right-column .profile-picture {
+    width: 80%;
+    height: auto;
+    border-radius: 1vh; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 2vh; 
+}
+
+footer {
+    text-align: center;
+    padding: 1vh; 
+    background-color: #1f1f1f;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.fade-in-left-letter-by-letter span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInLeftLetterByLetter 1.5s ease forwards;
+}
+
+@keyframes fadeInLeftLetterByLetter {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.pop-in {
+    animation: popIn 2s ease forwards;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .social-links {
+        margin-top: 1vh; 
+    }
+}
