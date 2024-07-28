@@ -151,7 +151,7 @@ main {
 
 .intro1 h1 {
     font-size: 3em;
-    color: #FFD700;
+    color: #51e8d6;
 }
 
 .intro1 p {
@@ -163,24 +163,6 @@ main {
 
 .intro1 p:hover {
     color: #F4A261;
-}
-
-.contact-button {
-    background-color: #fff;
-    color: #BF953F;
-    padding: 2vh 4vw; 
-    text-decoration: none;
-    border: 0.2vh solid #BF953F; 
-    border-radius: 0.5vh; 
-    transition: background-color 0.3s, transform 0.3s;
-    font-size: 1.5em;
-    margin-top: 4vh; 
-    position: relative;
-}
-
-.contact-button:hover {
-    background-color: #f4a261;
-    transform: scale(1.05);
 }
 
 .skill {

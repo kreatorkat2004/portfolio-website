@@ -151,10 +151,10 @@ main {
 
 .contact-button {
     background-color: transparent;
-    color: #BF953F;
+    color: #51e8d6;
     padding: 2vh 4vw; 
     text-decoration: none;
-    border: 0.2vh solid #BF953F; 
+    border: 0.2vh solid #51e8d6; 
     border-radius: 0.5vh; 
     transition: background-color 0.3s, transform 0.3s;
     font-size: 1.5em;
@@ -163,7 +163,7 @@ main {
 }
 
 .contact-button:hover {
-    background-color: #f4a261;
+    background-color: #32c9b9;
     transform: scale(1.05);
 }
 
