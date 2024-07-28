@@ -32,27 +32,27 @@
                 <li class="logo">
                     <img src="images/A.png" alt="Logo" class="logo-icon">
                 </li>
-                <li>
+                <li class="nav-item-container">
                     <a href="index.html" aria-label="Home" class="nav-item">
                         <img src="images/home.png" alt="Home" class="nav-icon"> Home
                     </a>
                 </li>
-                <li>
+                <li class="nav-item-container">
                     <a href="about.html" aria-label="About Me" class="nav-item">
                         <img src="images/about.png" alt="About" class="nav-icon"> About Me
                     </a>
                 </li>
-                <li>
+                <li class="nav-item-container">
                     <a href="work.html" aria-label="Work Experiences" class="nav-item">
                         <img src="images/work.png" alt="Work Experiences" class="nav-icon"> Work Experiences
                     </a>
                 </li>
-                <li>
+                <li class="nav-item-container">
                     <a href="projects.html" aria-label="Projects" class="nav-item">
                         <img src="images/project.png" alt="Projects" class="nav-icon"> Projects
                     </a>
                 </li>
-                <li>
+                <li class="nav-item-container">
                     <a href="contact.html" aria-label="Contact Me" class="nav-item">
                         <img src="images/email.png" alt="Contact Me" class="nav-icon"> Contact Me
                     </a>
@@ -69,6 +69,50 @@
                     </a>
                     <a href="https://www.chess.com/member/kreatorkat123" target="_blank" aria-label="Chess.com">
                         <img src="images/chess.png" alt="Chess.com" class="social-icon">
+                    </a>
+                </li>
+                <li class="hamburger-menu">
+                    <img src="images/three.png" alt="Menu" class="hamburger-icon">
+                </li>
+            </ul>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="index.html" aria-label="Home" class="nav-item">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" aria-label="About Me" class="nav-item">
+                        About Me
+                    </a>
+                </li>
+                <li>
+                    <a href="work.html" aria-label="Work Experiences" class="nav-item">
+                        Work Experiences
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html" aria-label="Projects" class="nav-item">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" aria-label="Contact Me" class="nav-item">
+                        Contact Me
+                    </a>
+                </li>
+                <li class="social-links-dropdown">
+                    <a href="https://www.linkedin.com/in/xianxi04" target="_blank" aria-label="LinkedIn">
+                        LinkedIn
+                    </a>
+                    <a href="https://www.github.com/kreatorkat2004" target="_blank" aria-label="Github">
+                        Github
+                    </a>
+                    <a href="https://www.instagram.com/pandachessaaron/" target="_blank" aria-label="Instagram">
+                        Instagram
+                    </a>
+                    <a href="https://www.chess.com/member/kreatorkat123" target="_blank" aria-label="Chess.com">
+                        Chess.com
                     </a>
                 </li>
             </ul>
@@ -127,6 +171,34 @@
 
         mainContent.addEventListener('scroll', () => {
             horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeInText = document.querySelector('.fade-in-left-letter-by-letter');
+            const text = fadeInText.innerText.replace('\n', ''); 
+            fadeInText.innerHTML = text.split('').map(letter => {
+                if (letter === ' ') return ' ';
+                return `<span>${letter}</span>`;
+            }).join('');
+            fadeInText.querySelectorAll('span').forEach((span, index) => {
+                span.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
+
+            horizontalScrollbar.addEventListener('scroll', () => {
+                mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
+            });
+
+            mainContent.addEventListener('scroll', () => {
+                horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
+            });
+
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            hamburgerMenu.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('show');
+            });
         });
     </script>
 </body>

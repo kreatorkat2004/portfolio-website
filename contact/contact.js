@@ -21,4 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     mainContent.addEventListener('scroll', () => {
         horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
     });
+
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    hamburgerMenu.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('show');
+    });
 });
