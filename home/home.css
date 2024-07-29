@@ -7,12 +7,32 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    height: 100%;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to top, #02AABD, #00CDAC);
     color: #fff;
     overflow-x: hidden;
-    min-height: 100vh;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 header {
@@ -103,7 +123,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100%;
+    flex: 1;
+    padding-top: 10vh;
     padding-bottom: 5vh; 
     position: relative;
 }
@@ -111,30 +132,29 @@ main {
 .left-column,
 .right-column {
     width: 50%;
-    padding: 2vw; 
+    padding: 5vw; 
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: flex-start; 
 }
 
 .intro {
-    text-align: left;
+    text-align: left; 
 }
 
-.intro h1 {
+.intro h1, .intro h2 {
     font-size: 3em; 
     color: #fff;
     font-weight: normal;
-    letter-spacing: 0.1em; 
+    margin-bottom: 1vh; 
 }
 
-.intro h1 img.letter-a {
-    width: 2em; 
-    height: auto;
-    vertical-align: bottom;
-    margin-right: 0.2em;
-    background: transparent;
-    opacity: 1; 
+.intro h1 {
+    word-spacing: 0.5em;
+}
+
+.intro h2 {
+    word-spacing: 0.1em;
 }
 
 .intro p.aspiring, .intro p.subtitle {
@@ -149,6 +169,10 @@ main {
     margin-top: 2vh;
 }
 
+.contact-container {
+    margin-top: 3vh; 
+}
+
 .contact-button {
     background-color: transparent;
     color: #51e8d6;
@@ -158,8 +182,7 @@ main {
     border-radius: 0.5vh; 
     transition: background-color 0.3s, transform 0.3s;
     font-size: 1.5em;
-    margin-top: auto; 
-    align-self: center; 
+    align-self: flex-start; 
 }
 
 .contact-button:hover {
@@ -177,18 +200,21 @@ main {
 
 footer {
     text-align: center;
-    padding: 1vh; 
+    padding: 1vh;
     background-color: #1f1f1f;
     color: #fff;
-    position: fixed;
     width: 100%;
-    bottom: 0;
+    margin-top: auto;
+}
+
+.fade-in-left-letter-by-letter {
+    display: inline-block;
 }
 
 .fade-in-left-letter-by-letter span {
     display: inline-block;
     opacity: 0;
-    animation: fadeInLeftLetterByLetter 1.5s ease forwards;
+    animation: fadeInLeftLetterByLetter 1s ease forwards;
 }
 
 @keyframes fadeInLeftLetterByLetter {
