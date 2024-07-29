@@ -26,5 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownMenu = document.querySelector('.dropdown-menu');
     hamburgerMenu.addEventListener('click', () => {
         dropdownMenu.classList.toggle('show');
+        hamburgerMenu.setAttribute('aria-expanded', dropdownMenu.classList.contains('show'));
     });
 });

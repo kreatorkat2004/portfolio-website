@@ -1,17 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const mainContent = document.querySelector('main');
-    const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
-
-    horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
-
-    horizontalScrollbar.addEventListener('scroll', () => {
-        mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
-    });
-
-    mainContent.addEventListener('scroll', () => {
-        horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
-    });
-
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const dropdownMenu = document.querySelector('.dropdown-menu');
     hamburgerMenu.addEventListener('click', () => {

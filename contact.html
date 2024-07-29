@@ -6,24 +6,6 @@
     <title>Contact Me - Aaron Wu</title>
     <link rel="stylesheet" href="contact/contact.css">
     <link rel="stylesheet" href="https://use.typekit.net/your-font-kit-id.css">
-    <style>
-        ::-webkit-scrollbar {
-          width: 10px;
-          height: 10px; 
-        }
-
-        ::-webkit-scrollbar-track {
-          background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: #888;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: #555;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -162,37 +144,5 @@
         <p>&copy; 2024 Aaron Wu</p>
     </footer>
     <script src="contact/contact.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const fadeInText = document.querySelector('.fade-in-left-letter-by-letter');
-            const text = fadeInText.innerText.replace('\n', ''); 
-            fadeInText.innerHTML = text.split('').map(letter => {
-                if (letter === ' ') return ' ';
-                return `<span>${letter}</span>`;
-            }).join('');
-            fadeInText.querySelectorAll('span').forEach((span, index) => {
-                span.style.animationDelay = `${index * 0.2}s`;
-            });
-
-            const mainContent = document.querySelector('main');
-            const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
-
-            horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
-
-            horizontalScrollbar.addEventListener('scroll', () => {
-                mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
-            });
-
-            mainContent.addEventListener('scroll', () => {
-                horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
-            });
-
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-            hamburgerMenu.addEventListener('click', () => {
-                dropdownMenu.classList.toggle('show');
-            });
-        });
-    </script>
 </body>
 </html>
