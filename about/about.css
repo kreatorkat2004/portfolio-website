@@ -156,13 +156,8 @@ main {
 
 .intro1 p {
     font-size: 1.2em;
-    margin: 2vh 0; 
-    cursor: pointer;
-    margin-bottom: 2vh; 
-}
-
-.intro1 p:hover {
-    color: #F4A261;
+    margin: 2vh 0;
+    margin-bottom: 2vh;
 }
 
 .skill {
@@ -170,16 +165,10 @@ main {
     padding: 1vh;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 0.5vh;
-    transition: transform 0.3s, background-color 0.3s;
     text-align: left;
-    animation: slideUp 1s ease-out;
+    animation: popIn 2s ease-out;
     position: relative;
     color: #fff;
-}
-
-.skill:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .skill span {

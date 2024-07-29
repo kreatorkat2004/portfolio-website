@@ -44,14 +44,14 @@ header {
 }
 
 .logo-icon {
-    height: 40px;
+    height: 2.5vw;
     vertical-align: middle;
 }
 
 .nav-item {
     color: #999;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.2em;
     padding: 10px 15px;
     transition: background-color 0.3s, color 0.3s;
     flex-shrink: 0;
@@ -59,8 +59,8 @@ header {
 }
 
 .nav-icon {
-    width: 40px;
-    height: 40px;
+    width: 2.5vw;
+    height: 2.5vw;
     margin-right: 8px;
     vertical-align: middle;
 }

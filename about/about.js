@@ -67,16 +67,26 @@ const skillsData = {
 
 function showSkills(type) {
     const skillsContainer = document.querySelector('.skills');
+    const skillButtons = document.querySelectorAll('.skill-buttons button');
+
     skillsContainer.innerHTML = ''; 
 
     skillsData[type].sort((a, b) => b.time - a.time).forEach(skill => {
         const skillElement = document.createElement('div');
-        skillElement.classList.add('skill');
+        skillElement.classList.add('skill', 'pop-in');
         skillElement.innerHTML = `
             <span>${skill.name}: ${skill.time} years</span>
             <div class="progress-bar" style="width: ${skill.time * 20}%; background-color: ${skill.color};"></div>
         `;
         skillsContainer.appendChild(skillElement);
+    });
+
+    skillButtons.forEach(button => {
+        if (button.textContent === type) {
+            button.style.display = 'none';
+        } else {
+            button.style.display = 'inline-block';
+        }
     });
 
     generateBubbles(skillsData[type].length);

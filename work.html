@@ -6,21 +6,6 @@
     <title>Work Experiences - Aaron Wu</title>
     <link rel="stylesheet" href="work/work.css">
     <link rel="stylesheet" href="https://use.typekit.net/your-font-kit-id.css">
-    <style>
-        ::-webkit-scrollbar {
-          width: 10px;
-          height: 10px; 
-        }
-        ::-webkit-scrollbar-track {
-          background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-          background: #888;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-          background: #555;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -103,7 +88,7 @@
     <main>
         <div class="left-column">
             <section>
-                <h1 class="fade-in-left-letter-by-letter" style="color: #fff;">Work Experiences</h1>
+                <h1 class="fade-in-left-letter-by-letter" style="color: #51e8d6;">Work Experiences</h1>
                 <div class="experience-container">
                     <div class="experience-box">
                         <h2 class="position">ML Researcher and Web Developer</h2>
@@ -159,24 +144,5 @@
         <p>&copy; 2024 Aaron Wu</p>
     </footer>
     <script src="work/work.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-            hamburgerMenu.addEventListener('click', () => {
-                dropdownMenu.classList.toggle('show');
-            });
-
-            const fadeInText = document.querySelector('.fade-in-left-letter-by-letter');
-            const text = fadeInText.innerText.replace('\n', ''); 
-            fadeInText.innerHTML = text.split('').map(letter => {
-                if (letter === ' ') return ' ';
-                return `<span>${letter}</span>`;
-            }).join('');
-            fadeInText.querySelectorAll('span').forEach((span, index) => {
-                span.style.animationDelay = `${index * 0.2}s`;
-            });
-        });
-    </script>
 </body>
 </html>

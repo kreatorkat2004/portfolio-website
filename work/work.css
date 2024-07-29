@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px; 
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -109,8 +123,9 @@ header {
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100%;
     padding-bottom: 5vh;
     position: relative;
@@ -123,7 +138,7 @@ main {
 
 h1 {
     font-size: 3em;
-    color: #fff;
+    color: #51e8d6; 
     margin-top: 15vh; 
 }
 
@@ -132,18 +147,24 @@ h1 {
 }
 
 .experience-box {
-    background: #444;
+    background: #1a1534; 
     border-radius: 0.8vh;
     padding: 2vw;
     margin-bottom: 2vh;
     max-width: 50%; 
-    transition: transform 0.3s, background-color 0.3s;
     position: relative;
+    animation: popIn 2.0s ease-out; 
 }
 
-.experience-box:hover {
-    transform: scale(1.05);
-    background-color: #666;
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .position {
@@ -166,17 +187,18 @@ h1 {
 
 .time-period {
     position: absolute;
-    right: -25vw; /* Adjust this value as needed */
+    right: -25vw; 
     top: 2vw;
     font-size: 1em;
-    color: #ccc;
+    color: #fff;
     white-space: nowrap;
+    animation: popIn 2.0s ease-out; 
 }
 
 .experience-container::before {
     content: '';
     position: absolute;
-    right: -27vw; /* Adjust this value as needed */
+    right: -27vw; 
     top: 0;
     bottom: 0;
     width: 2px;
