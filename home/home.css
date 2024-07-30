@@ -190,7 +190,7 @@ main {
 }
 
 .right-column .profile-picture {
-    width: 50vh; 
+    width: 45vh; 
     height: 60vh; 
     border-radius: 1vh; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);

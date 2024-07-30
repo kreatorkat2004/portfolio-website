@@ -263,9 +263,8 @@ footer {
     padding: 1vh;
     background-color: #1f1f1f;
     color: #fff;
-    position: fixed;
     width: 100%;
-    bottom: 0;
+    margin-top: auto;
 }
 
 @media (max-width: 768px) {
