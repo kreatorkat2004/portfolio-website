@@ -1,23 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to top, #02AABD, #00CDAC);
-    color: #fff;
-    overflow-x: hidden;
-    overflow-y: auto; 
-    display: flex;
-    flex-direction: column;
-}
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px; 
@@ -35,6 +18,22 @@ html, body {
     background: #555;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #02AABD, #00CDAC);
+    color: #fff;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     background-color: #000;
 }
@@ -43,11 +42,12 @@ header {
     display: flex;
     align-items: center;
     height: 60px;
-    padding: 0;
+    padding: 0 20px;
     margin: 0;
     list-style: none;
-    flex-wrap: wrap; 
+    flex-wrap: nowrap;
     justify-content: space-between;
+    width: 100%;
 }
 
 .logo-icon, .nav-icon, .social-icon {
@@ -99,10 +99,9 @@ header {
 }
 
 .social-links {
-    margin-left: auto;
     display: flex;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: nowrap; 
 }
 
 .social-links a {
@@ -143,7 +142,7 @@ main {
 }
 
 .intro h1, .intro h2 {
-    font-size: 3em; 
+    font-size: 2.5em; 
     color: #fff;
     font-weight: normal;
     margin-bottom: 1vh; 
@@ -170,7 +169,7 @@ main {
 }
 
 .contact-container {
-    margin-top: 3vh; 
+    margin-top: 12vh; 
 }
 
 .contact-button {
@@ -181,7 +180,7 @@ main {
     border: 0.2vh solid #51e8d6; 
     border-radius: 0.5vh; 
     transition: background-color 0.3s, transform 0.3s;
-    font-size: 1.5em;
+    font-size: 2.5em;
     align-self: flex-start; 
 }
 
@@ -191,8 +190,8 @@ main {
 }
 
 .right-column .profile-picture {
-    width: 80%;
-    height: auto;
+    width: 50vh; 
+    height: 60vh; 
     border-radius: 1vh; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin-top: 2vh; 

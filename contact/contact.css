@@ -6,6 +6,23 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to top, #02AABD, #00CDAC);
@@ -34,6 +51,7 @@ header {
     padding: 0 20px;
     margin: 0;
     list-style: none;
+    flex-wrap: nowrap;
     justify-content: space-between;
     width: 100%;
 }
@@ -63,6 +81,7 @@ header {
     height: 2.5vw;
     margin-right: 8px;
     vertical-align: middle;
+    transition: width 0.3s, height 0.3s;
 }
 
 .nav-item:hover {
@@ -241,29 +260,12 @@ main {
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 1vh;
     background-color: #1f1f1f;
     color: #fff;
     position: fixed;
     width: 100%;
     bottom: 0;
-    left: 0;
-}
-
-.horizontal-scrollbar::-webkit-scrollbar {
-    height: 10px;
-}
-
-.horizontal-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.horizontal-scrollbar::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-.horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 
 @media (max-width: 768px) {
