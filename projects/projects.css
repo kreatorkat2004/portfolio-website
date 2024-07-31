@@ -16,11 +16,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #ccc; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #aaa;
 }
 
 body {
@@ -147,31 +147,31 @@ main {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; /* Center the project items */
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center; 
 }
 
 .project-item {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    flex: 1 1 calc(33.333% - 20px); /* Allow items to take 33.333% of the row */
+    width: 80%;
     display: flex;
     justify-content: center;
-    max-width: calc(33.333% - 20px); /* Ensure items do not exceed 33.333% of the container width */
 }
 
 .project-box {
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 60vh; /* Adjust height to fit most of the page */
+    height: 80vh; 
     width: 100%;
     display: flex;
     align-items: flex-end;
     border-radius: 10px;
-    animation: popIn 2s ease forwards; /* Apply pop-in animation */
+    animation: popIn 2s ease forwards; 
 }
 
 .project-info {
@@ -189,26 +189,26 @@ main {
 
 .project-info span {
     text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 20px; /* Add space below the title */
+    font-size: 2em; 
+    margin-bottom: 20px; 
 }
 
 .see-more {
-    background-color: #a3f7e4; /* Lightened color */
+    background-color: #a3f7e4; 
     border: none;
     color: black;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
     position: absolute;
-    bottom: -50px; /* Initially hide the button */
-    left: 50%;
-    transform: translateX(-50%);
-    transition: bottom 0.3s ease-in-out; /* Slide up animation */
+    bottom: 10px; 
+    right: 10px;
+    transition: bottom 0.3s ease-in-out, right 0.3s ease-in-out; 
 }
 
 .project-box:hover .see-more {
-    bottom: 10px; /* Slide up when the box is hovered */
+    bottom: 20px; 
+    right: 20px;
 }
 
 .more-info {
@@ -306,11 +306,11 @@ footer {
 }
 
 .horizontal-scrollbar::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #ccc; 
 }
 
 .horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #aaa;
 }
 
 @media (max-width: 768px) {
