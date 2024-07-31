@@ -27,4 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeInText.querySelectorAll('span').forEach((span, index) => {
         span.style.animationDelay = `${index * 0.2}s`;
     });
+
+    document.querySelectorAll('.see-more').forEach(button => {
+        button.addEventListener('click', () => {
+            const moreInfo = button.nextElementSibling;
+            if (moreInfo.style.display === 'block') {
+                moreInfo.style.display = 'none';
+                button.innerText = 'See More';
+            } else {
+                moreInfo.style.display = 'block';
+                button.innerText = 'See Less';
+            }
+        });
+    });
 });

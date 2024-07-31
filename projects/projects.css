@@ -158,15 +158,61 @@ h1 {
     margin-bottom: 2em;
 }
 
-.projects-section h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    color: #fff;
+.project-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.projects-section p {
-    font-size: 1em;
-    line-height: 1.5;
+.project-box {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 300px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+}
+
+.project-info {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.see-more {
+    background-color: #51e8d6;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.more-info {
+    display: none;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.more-info p, .more-info ul {
+    color: white;
+}
+
+.more-info ul {
+    padding-left: 20px;
+}
+
+.more-info ul li {
+    list-style-type: disc;
 }
 
 .fade-in-left {
