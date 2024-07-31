@@ -126,9 +126,8 @@ header {
 
 main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
-    height: calc(100vh - 60px);
     padding: 2vw;
     padding-top: 80px;
     padding-bottom: 5vh;
@@ -140,39 +139,39 @@ main {
 
 .left-column,
 .right-column {
-    flex: 0 0 45%;
+    flex: 1;
     padding: 2vw;
-}
-
-h1 {
-    font-size: 3em;
-    color: #CD0021;
 }
 
 .projects-section {
     list-style: none;
     padding: 0;
-}
-
-.projects-section li {
-    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the project items */
 }
 
 .project-item {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
+    flex: 1 1 calc(33.333% - 20px); /* Allow items to take 33.333% of the row */
+    display: flex;
+    justify-content: center;
+    max-width: calc(33.333% - 20px); /* Ensure items do not exceed 33.333% of the container width */
 }
 
 .project-box {
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 200px;
-    width: 300px;
+    height: 60vh; /* Adjust height to fit most of the page */
+    width: 100%;
     display: flex;
     align-items: flex-end;
     border-radius: 10px;
+    animation: popIn 2s ease forwards; /* Apply pop-in animation */
 }
 
 .project-info {
@@ -181,18 +180,35 @@ h1 {
     width: 100%;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     border-radius: 0 0 10px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-info span {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px; /* Add space below the title */
 }
 
 .see-more {
-    background-color: #51e8d6;
+    background-color: #a3f7e4; /* Lightened color */
     border: none;
     color: black;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
+    position: absolute;
+    bottom: -50px; /* Initially hide the button */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.3s ease-in-out; /* Slide up animation */
+}
+
+.project-box:hover .see-more {
+    bottom: 10px; /* Slide up when the box is hovered */
 }
 
 .more-info {
