@@ -114,8 +114,8 @@ main {
     justify-content: space-between;
     align-items: flex-start;
     height: calc(100vh - 60px);
-    padding: 20px;
-    padding-top: 80px;
+    padding: 2vw;
+    padding-top: 115px;
     padding-bottom: 5vh;
     position: relative;
     overflow: auto;

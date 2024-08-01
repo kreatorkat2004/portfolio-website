@@ -30,13 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.see-more').forEach(button => {
         button.addEventListener('click', () => {
-            const moreInfo = button.nextElementSibling;
-            if (moreInfo.style.display === 'block') {
-                moreInfo.style.display = 'none';
-                button.innerText = 'See More';
+            const projectBox = button.closest('.project-box');
+            let duplicate = projectBox.parentNode.querySelector('.project-box-duplicate');
+
+            if (duplicate) {
+                duplicate.style.display = duplicate.style.display === 'block' ? 'none' : 'block';
             } else {
-                moreInfo.style.display = 'block';
-                button.innerText = 'See Less';
+                duplicate = document.createElement('div');
+                duplicate.classList.add('project-box-duplicate');
+                duplicate.innerHTML = `<p>Additional project information goes here.</p>`;
+                document.body.appendChild(duplicate);
+
+                const rect = projectBox.getBoundingClientRect();
+                duplicate.style.top = `${window.scrollY + rect.top}px`;
+                duplicate.style.left = `${window.scrollX + rect.right + 20}px`;
+                duplicate.style.display = 'block';
             }
         });
     });
