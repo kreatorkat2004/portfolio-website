@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mainContent.addEventListener('scroll', () => {
         horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
+        adjustDuplicatePosition();
     });
 
     const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -38,14 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 duplicate = document.createElement('div');
                 duplicate.classList.add('project-box-duplicate');
-                duplicate.innerHTML = `<p>Additional project information goes here.</p>`;
-                document.body.appendChild(duplicate);
-
-                const rect = projectBox.getBoundingClientRect();
-                duplicate.style.top = `${window.scrollY + rect.top}px`;
-                duplicate.style.left = `${window.scrollX + rect.right + 20}px`;
+                duplicate.innerHTML = `<div class="project-info">
+                                          <span>${projectBox.querySelector('.project-info span').innerText}</span>
+                                          ${projectBox.querySelector('.more-info').innerHTML}
+                                       </div>`;
+                projectBox.parentNode.appendChild(duplicate);
+                duplicate.style.top = '0px';
+                duplicate.style.left = '100%';
                 duplicate.style.display = 'block';
             }
         });
     });
+
+    function adjustDuplicatePosition() {
+        document.querySelectorAll('.project-box-duplicate').forEach(duplicate => {
+            const projectBox = duplicate.previousElementSibling;
+            const rect = projectBox.getBoundingClientRect();
+            duplicate.style.top = `${rect.top}px`;
+            duplicate.style.left = `${rect.right + 20}px`;
+        });
+    }
+
+    window.addEventListener('resize', adjustDuplicatePosition);
+    window.addEventListener('scroll', adjustDuplicatePosition);
 });
