@@ -179,15 +179,6 @@ h1 {
     left: -25vw;
 }
 
-footer {
-    text-align: center;
-    padding: 1vh;
-    background-color: #1f1f1f;
-    color: #fff;
-    width: 100%;
-    margin-top: auto;
-}
-
 @media (max-width: 768px) {
     .nav-list {
         flex-wrap: wrap;
