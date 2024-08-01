@@ -14,4 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeInText.querySelectorAll('span').forEach((span, index) => {
         span.style.animationDelay = `${index * 0.2}s`;
     });
+
+    const seeMoreBtns = document.querySelectorAll('.see-more-btn');
+    seeMoreBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const description = btn.previousElementSibling;
+            if (description.style.display === 'none' || !description.style.display) {
+                description.style.display = 'block';
+                btn.textContent = 'See Less';
+            } else {
+                description.style.display = 'none';
+                btn.textContent = 'See More';
+            }
+        });
+    });
 });
