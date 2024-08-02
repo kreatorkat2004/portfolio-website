@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.querySelector('main');
     const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
+    const bubblesBox = document.querySelector('.bubbles-box');
+    const titleElement = document.querySelector('.intro1 h1');
 
     horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
 
@@ -28,7 +30,120 @@ document.addEventListener('DOMContentLoaded', () => {
         span.style.animationDelay = `${index * 0.2}s`;
     });
 
+    document.querySelectorAll('.skill-buttons button').forEach(button => {
+        button.addEventListener('click', () => {
+            showSkills(button.textContent);
+        });
+    });
+
     showSkills('Languages'); 
+
+    function generateBubbles(skills) {
+        bubblesBox.innerHTML = '';
+
+        const bubbleWidth = 100;
+        const bubbleHeight = 100;
+        const containerWidth = bubblesBox.clientWidth;
+        const titleRect = titleElement.getBoundingClientRect();
+        const bubblesBoxRect = bubblesBox.getBoundingClientRect();
+        let currentX = 0;
+        let currentY = titleRect.top - bubblesBoxRect.top;
+        const maxBubblesPerRow = 3;
+
+        skills.forEach((skill, index) => {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const img = document.createElement('img');
+            img.src = getImagePath(skill.name);
+            img.alt = skill.name;
+            bubble.appendChild(img);
+            bubblesBox.appendChild(bubble);
+
+            bubble.style.left = `${currentX}px`;
+            bubble.style.top = `${currentY}px`;
+            bubble.dataset.vx = (Math.random() - 0.5) * 4;
+            bubble.dataset.vy = (Math.random() - 0.5) * 4;
+
+            currentX += bubbleWidth;
+
+            if ((index + 1) % maxBubblesPerRow === 0) {
+                currentX = 0;
+                currentY += bubbleHeight;
+            }
+        });
+
+        setTimeout(() => {
+            requestAnimationFrame(moveBubbles);
+        }, 1000);
+    }
+
+    function moveBubbles() {
+        const bubbles = document.querySelectorAll('.bubble');
+        const virtualBoundaryHeight = bubblesBox.clientHeight / 2;
+
+        bubbles.forEach(bubble => {
+            let x = parseFloat(bubble.style.left);
+            let y = parseFloat(bubble.style.top);
+            let vx = parseFloat(bubble.dataset.vx);
+            let vy = parseFloat(bubble.dataset.vy);
+
+            x += vx;
+            y += vy;
+
+            if (x <= 0 || x + bubble.clientWidth >= bubblesBox.clientWidth) {
+                vx = -vx;
+                x = Math.max(0, Math.min(x, bubblesBox.clientWidth - bubble.clientWidth));
+            }
+            if (y <= 0 || y + bubble.clientHeight >= virtualBoundaryHeight) {
+                vy = -vy;
+                y = Math.max(0, Math.min(y, virtualBoundaryHeight - bubble.clientHeight));
+            }
+
+            bubble.style.left = `${x}px`;
+            bubble.style.top = `${y}px`;
+            bubble.dataset.vx = vx;
+            bubble.dataset.vy = vy;
+        });
+
+        requestAnimationFrame(moveBubbles);
+    }
+
+    function getImagePath(skillName) {
+        const specialCases = {
+            'HTML/CSS': 'images/about_images/htmlcss.png',
+            'Node.js': 'images/about_images/nodejs.png',
+            'React.js': 'images/about_images/reactjs.png'
+        };
+
+        return specialCases[skillName] || `images/about_images/${encodeURIComponent(skillName.toLowerCase().replace(/ /g, ''))}.png`;
+    }
+
+    function showSkills(type) {
+        const skillsContainer = document.querySelector('.skills');
+        const skillButtons = document.querySelectorAll('.skill-buttons button');
+
+        skillsContainer.innerHTML = ''; 
+
+        skillsData[type].sort((a, b) => b.time - a.time).forEach(skill => {
+            const skillElement = document.createElement('div');
+            skillElement.classList.add('skill', 'pop-in');
+            skillElement.innerHTML = `
+                <span>${skill.name}: ${skill.time} years</span>
+                <div class="progress-bar" style="width: ${skill.time * 20}%; background-color: ${skill.color};"></div>
+            `;
+            skillsContainer.appendChild(skillElement);
+        });
+
+        skillButtons.forEach(button => {
+            if (button.textContent === type) {
+                button.style.display = 'none';
+            } else {
+                button.style.display = 'inline-block';
+            }
+        });
+
+        generateBubbles(skillsData[type]);
+    }
 });
 
 const skillsData = {
@@ -70,55 +185,3 @@ const skillsData = {
         { name: "TensorFlow", time: 1.5, color: "#98B4D4" }
     ]
 };
-
-function showSkills(type) {
-    const skillsContainer = document.querySelector('.skills');
-    const skillButtons = document.querySelectorAll('.skill-buttons button');
-
-    skillsContainer.innerHTML = ''; 
-
-    skillsData[type].sort((a, b) => b.time - a.time).forEach(skill => {
-        const skillElement = document.createElement('div');
-        skillElement.classList.add('skill', 'pop-in');
-        skillElement.innerHTML = `
-            <span>${skill.name}: ${skill.time} years</span>
-            <div class="progress-bar" style="width: ${skill.time * 20}%; background-color: ${skill.color};"></div>
-        `;
-        skillsContainer.appendChild(skillElement);
-    });
-
-    skillButtons.forEach(button => {
-        if (button.textContent === type) {
-            button.style.display = 'none';
-        } else {
-            button.style.display = 'inline-block';
-        }
-    });
-
-    generateBubbles(skillsData[type]);
-}
-
-function generateBubbles(skills) {
-    const bubblesContainer = document.querySelector('.bubbles-container');
-    bubblesContainer.innerHTML = '';
-
-    skills.forEach(skill => {
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
-        const img = document.createElement('img');
-        img.src = getImagePath(skill.name); 
-        img.alt = skill.name;
-        bubble.appendChild(img);
-        bubblesContainer.appendChild(bubble);
-    });
-}
-
-function getImagePath(skillName) {
-    const specialCases = {
-        'HTML/CSS': 'images/about_images/htmlcss.png',
-        'Node.js': 'images/about_images/nodejs.png',
-        'React.js': 'images/about_images/reactjs.png'
-    };
-
-    return specialCases[skillName] || `images/about_images/${encodeURIComponent(skillName.toLowerCase().replace(/ /g, ''))}.png`;
-}
