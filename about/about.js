@@ -59,9 +59,15 @@ const skillsData = {
     ],
 
     Libraries: [
-        { name: "Data Manipulation and Analysis Libraries (NumPy, Pandas)", time: 3, color: "#BC243C" },
-        { name: "Data Visualization Libraries (Matplotlib, Plotly, Shiny, Ggplot)", time: 2, color: "#C3447A" },
-        { name: "Machine Learning Libraries (PyTorch, Scikit-learn, Tensorflow)", time: 1.5, color: "#98B4D4" }
+        { name: "NumPy", time: 3, color: "#BC243C" },
+        { name: "Pandas", time: 3, color: "#BC243C" },
+        { name: "Matplotlib", time: 2, color: "#C3447A" },
+        { name: "Plotly", time: 2, color: "#C3447A" },
+        { name: "Shiny", time: 2, color: "#C3447A" },
+        { name: "Ggplot", time: 2, color: "#C3447A" },
+        { name: "PyTorch", time: 1.5, color: "#98B4D4" },
+        { name: "Scikit-learn", time: 1.5, color: "#98B4D4" },
+        { name: "TensorFlow", time: 1.5, color: "#98B4D4" }
     ]
 };
 
@@ -100,9 +106,19 @@ function generateBubbles(skills) {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
         const img = document.createElement('img');
-        img.src = `images/about_images/${skill.name.toLowerCase().replace(/ /g, '')}.png`; 
+        img.src = getImagePath(skill.name); 
         img.alt = skill.name;
         bubble.appendChild(img);
         bubblesContainer.appendChild(bubble);
     });
+}
+
+function getImagePath(skillName) {
+    const specialCases = {
+        'HTML/CSS': 'images/about_images/htmlcss.png',
+        'Node.js': 'images/about_images/nodejs.png',
+        'React.js': 'images/about_images/reactjs.png'
+    };
+
+    return specialCases[skillName] || `images/about_images/${encodeURIComponent(skillName.toLowerCase().replace(/ /g, ''))}.png`;
 }
