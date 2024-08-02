@@ -230,15 +230,6 @@ main {
     }
 }
 
-footer {
-    text-align: center;
-    padding: 1vh;
-    background-color: #1f1f1f;
-    color: #fff;
-    width: 100%;
-    margin-top: auto;
-}
-
 .horizontal-scrollbar::-webkit-scrollbar {
     height: 10px;
 }
@@ -256,25 +247,32 @@ footer {
 }
 
 .bubble {
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
     width: 100px;
     height: 100px;
+    margin: 10px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.7), rgba(173, 216, 230, 0.5));
     box-shadow: 0 0 20px rgba(173, 216, 230, 0.5);
-    animation: float 3s ease-in-out infinite;
+    position: relative;
 }
 
 .bubbles-container {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     height: 100%;
-    overflow: hidden;
+}
+
+.bubble img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
 }
 
 @media (max-width: 768px) {

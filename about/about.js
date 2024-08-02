@@ -39,7 +39,7 @@ const skillsData = {
         { name: "R", time: 3, color: "#88B04B" },
         { name: "JavaScript", time: 3, color: "#F7CAC9" },
         { name: "HTML/CSS", time: 3, color: "#92A8D1" },
-        { name: "C", time: 1, color: "#955251" }
+        { name: "C++", time: 1.5, color: "#955251" }
     ],
     Frameworks: [
         { name: "Django", time: 3, color: "#B565A7" },
@@ -89,19 +89,20 @@ function showSkills(type) {
         }
     });
 
-    generateBubbles(skillsData[type].length);
+    generateBubbles(skillsData[type]);
 }
 
-function generateBubbles(count) {
+function generateBubbles(skills) {
     const bubblesContainer = document.querySelector('.bubbles-container');
     bubblesContainer.innerHTML = '';
 
-    for (let i = 0; i < count; i++) {
+    skills.forEach(skill => {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
-        bubble.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        bubble.style.animationDelay = `${Math.random() * 2}s`;
-        bubble.style.top = `${Math.random() * 90 + 5}%`;
+        const img = document.createElement('img');
+        img.src = `images/about_images/${skill.name.toLowerCase().replace(/ /g, '')}.png`; 
+        img.alt = skill.name;
+        bubble.appendChild(img);
         bubblesContainer.appendChild(bubble);
-    }
+    });
 }

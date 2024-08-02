@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const mainContent = document.querySelector('main');
+    const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
+
+    horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
+
+    horizontalScrollbar.addEventListener('scroll', () => {
+        mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
+    });
+
+    mainContent.addEventListener('scroll', () => {
+        horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
+    });
+
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const dropdownMenu = document.querySelector('.dropdown-menu');
     hamburgerMenu.addEventListener('click', () => {
@@ -13,5 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
     fadeInText.querySelectorAll('span').forEach((span, index) => {
         span.style.animationDelay = `${index * 0.2}s`;
+    });
+
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.project-box-duplicate').forEach(duplicate => {
+            const projectBox = duplicate.previousElementSibling;
+            const rect = projectBox.getBoundingClientRect();
+            duplicate.style.top = `${rect.top}px`;
+            duplicate.style.left = `${rect.right + 20}px`;
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.project-box-duplicate').forEach(duplicate => {
+            const projectBox = duplicate.previousElementSibling;
+            const rect = projectBox.getBoundingClientRect();
+            duplicate.style.top = `${rect.top}px`;
+            duplicate.style.left = `${rect.right + 20}px`;
+        });
     });
 });

@@ -199,7 +199,7 @@ main {
 
 .pop-in {
     animation: popIn 2s ease forwards;
-}
+} 
 
 .fade-in {
     animation: fadeIn 2s ease forwards;
