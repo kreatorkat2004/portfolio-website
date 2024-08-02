@@ -38,74 +38,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showSkills('Languages'); 
 
-    function generateBubbles(skills) {
+    function generateBubbles(skills, layout, specialCases = {}) {
         bubblesBox.innerHTML = '';
 
-        const bubbleWidth = 100;
-        const bubbleHeight = 100;
+        const bubbleWidth = 100; // Adjust this value based on your bubble size
+        const bubbleHeight = 100; // Adjust this value based on your bubble size
         const containerWidth = bubblesBox.clientWidth;
-        const titleRect = titleElement.getBoundingClientRect();
-        const bubblesBoxRect = bubblesBox.getBoundingClientRect();
-        let currentX = 0;
-        let currentY = titleRect.top - bubblesBoxRect.top;
-        const maxBubblesPerRow = 3;
+        const containerHeight = bubblesBox.clientHeight;
+        const startX = (containerWidth - (bubbleWidth * layout[0])) / 2;
+        const startY = (containerHeight - (bubbleHeight * layout.length)) / 2;
 
-        skills.forEach((skill, index) => {
-            const bubble = document.createElement('div');
-            bubble.classList.add('bubble');
-            const img = document.createElement('img');
-            img.src = getImagePath(skill.name);
-            img.alt = skill.name;
-            bubble.appendChild(img);
-            bubblesBox.appendChild(bubble);
+        let index = 0;
+        layout.forEach((row, rowIndex) => {
+            for (let i = 0; i < row; i++) {
+                if (index >= skills.length) break;
+                const skill = skills[index];
 
-            bubble.style.left = `${currentX}px`;
-            bubble.style.top = `${currentY}px`;
-            bubble.dataset.vx = (Math.random() - 0.5) * 4;
-            bubble.dataset.vy = (Math.random() - 0.5) * 4;
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                const img = document.createElement('img');
+                img.src = getImagePath(skill.name);
+                img.alt = skill.name;
+                bubble.appendChild(img);
+                bubblesBox.appendChild(bubble);
 
-            currentX += bubbleWidth;
+                let currentX = startX + (i * bubbleWidth);
+                let currentY = startY + (rowIndex * bubbleHeight);
 
-            if ((index + 1) % maxBubblesPerRow === 0) {
-                currentX = 0;
-                currentY += bubbleHeight;
+                if (specialCases[skill.name]) {
+                    const { x, y } = specialCases[skill.name];
+                    currentX = startX + (x * bubbleWidth);
+                    currentY = startY + (y * bubbleHeight);
+                }
+
+                bubble.style.left = `${currentX}px`;
+                bubble.style.top = `${currentY}px`;
+
+                index++;
             }
         });
-
-        setTimeout(() => {
-            requestAnimationFrame(moveBubbles);
-        }, 1000);
-    }
-
-    function moveBubbles() {
-        const bubbles = document.querySelectorAll('.bubble');
-        const virtualBoundaryHeight = bubblesBox.clientHeight / 2;
-
-        bubbles.forEach(bubble => {
-            let x = parseFloat(bubble.style.left);
-            let y = parseFloat(bubble.style.top);
-            let vx = parseFloat(bubble.dataset.vx);
-            let vy = parseFloat(bubble.dataset.vy);
-
-            x += vx;
-            y += vy;
-
-            if (x <= 0 || x + bubble.clientWidth >= bubblesBox.clientWidth) {
-                vx = -vx;
-                x = Math.max(0, Math.min(x, bubblesBox.clientWidth - bubble.clientWidth));
-            }
-            if (y <= 0 || y + bubble.clientHeight >= virtualBoundaryHeight) {
-                vy = -vy;
-                y = Math.max(0, Math.min(y, virtualBoundaryHeight - bubble.clientHeight));
-            }
-
-            bubble.style.left = `${x}px`;
-            bubble.style.top = `${y}px`;
-            bubble.dataset.vx = vx;
-            bubble.dataset.vy = vy;
-        });
-
-        requestAnimationFrame(moveBubbles);
     }
 
     function getImagePath(skillName) {
@@ -142,7 +113,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        generateBubbles(skillsData[type]);
+        const layouts = {
+            'Libraries': [3, 3, 3],
+            'Tools': [3, 3, 2],
+            'Languages': [3, 3, 2],
+            'Frameworks': [3, 2]
+        };
+
+        const specialCases = {
+            'Tools': {
+                'Docker': { x: 1, y: 2 } 
+            },
+            'Languages': {
+                'C++': { x: 1, y: 2 } 
+            },
+            'Frameworks': {
+                'Node.js': { x: 0.5, y: 1 }, 
+                'React.js': { x: 1.5, y: 1 } 
+            }
+        };
+
+        generateBubbles(skillsData[type], layouts[type], specialCases[type] || {});
     }
 });
 

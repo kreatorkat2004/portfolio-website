@@ -246,6 +246,17 @@ main {
     background: #555;
 }
 
+.bubbles-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    pointer-events: none; 
+    overflow: hidden;
+    z-index: -1; 
+}
+
 .bubble {
     width: 100px;
     height: 100px;
@@ -253,8 +264,8 @@ main {
     border-radius: 50%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.7), rgba(173, 216, 230, 0.5));
     box-shadow: 0 0 20px rgba(173, 216, 230, 0.5);
-    position: relative;
-    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    animation: upDown 4s ease-in-out infinite alternate;
 }
 
 .bubble img {
@@ -264,6 +275,15 @@ main {
     transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
 }
 
 @media (max-width: 768px) {
@@ -337,14 +357,4 @@ main {
     .hamburger-menu {
         display: block;
     }
-}
-
-.bubbles-box {
-    border: rgba(0, 0, 0, 0);  
-    background-color: rgba(0, 0, 0, 0); 
-    padding: 20px; 
-    box-sizing: border-box; 
-    width: 80vh; 
-    height: 80vh; 
-    position: relative;
 }
