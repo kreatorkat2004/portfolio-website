@@ -168,10 +168,10 @@ main {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.5s ease;
+    margin-left: 90px;
 }
 
 .project-box:hover .project-details {
-    display: block;
     transform: translateY(0);
     opacity: 1;
 }
@@ -202,15 +202,15 @@ main {
     border-radius: 10px;
     border: 2px solid #00008B;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 100;
     position: absolute;
-    top: -100vh;
+    top: 0;
     left: 0;
-    transform: translateY(100vh);
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
     transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 0;
-    width: 100%;
-    height: 100vh;
+    z-index: 10;
 }
 
 .project-details p, .project-details ul, .project-details li {
