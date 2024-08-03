@@ -149,72 +149,53 @@ main {
 }
 
 .project-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.project-box {
+.project-card {
     position: relative;
+    width: 350px; /* Increased width for a trading card look */
+    height: 450px; /* Adjusted height */
+    perspective: 1000px;
+    margin: 20px;
+}
+
+.project-card-front {
     background-size: cover;
     background-position: center;
-    height: 60vh;
-    width: 40vh;
     display: flex;
     align-items: flex-end;
+    justify-content: center;
+    color: black; /* Changed title text color to black */
+    font-size: 2em;
+    text-align: center;
+    padding: 10px; /* Padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.project-card-back {
+    background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
+    border: 2px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    color: #333;
+    padding: 20px;
     border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.5s ease;
-    margin-left: 90px;
-}
-
-.project-box:hover .project-details {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.project-info {
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    width: 100%;
-    padding: 10px;
+    transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    border-radius: 0 0 10px 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-.project-info span {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .project-details {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #00008B;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateY(100%);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-    z-index: 10;
+    text-align: center;
 }
 
-.project-details p, .project-details ul, .project-details li {
-    color: black;
+.project-details p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
 }
 
 .project-details ul {
@@ -222,118 +203,33 @@ main {
     padding-left: 20px;
 }
 
-.view-more-btn {
-    background-color: #2A9D8F;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    align-self: flex-start;
+.project-details ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-.view-more-btn:hover {
-    background-color: #1A7A6F;
+.github-button {
+    margin-top: 15px; /* Spacing above the button */
+    padding: 10px 20px; /* Button padding */
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* No underline */
+    font-size: 1em; /* Font size */
 }
 
-.more-info {
-    display: block;
-    margin-top: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
+.github-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-.more-info ul {
-    padding-left: 20px;
+.project-card.flipped .project-card-front {
+    transform: rotateY(180deg);
 }
 
-.more-info ul li {
-    list-style-type: disc;
-}
-
-.project-box-duplicate {
-    background-color: white;
-    color: black;
-    position: relative;
-    height: 60vh;
-    width: 60vh;
-    border-radius: 10px;
-    overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    z-index: 2000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.project-box-duplicate .project-info {
-    background: none;
-    color: black;
-    padding: 20px;
-}
-
-.pop-out {
-    animation: popOut 1s ease-out;
-}
-
-@keyframes popOut {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.fade-in-left-letter-by-letter span {
-    display: inline-block;
-    opacity: 0;
-    animation: fadeInLetter 1s forwards;
-}
-
-@keyframes fadeInLetter {
-    to {
-        opacity: 1;
-    }
-}
-
-.pop-in {
-    animation: popIn 2s ease forwards;
-}
-
-@keyframes popIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.horizontal-scrollbar::-webkit-scrollbar {
-    height: 10px;
-}
-
-.horizontal-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.horizontal-scrollbar::-webkit-scrollbar-thumb {
-    background: #ccc;
-}
-
-.horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
+.project-card.flipped .project-card-back {
+    transform: rotateY(0);
 }
 
 @media (max-width: 768px) {
@@ -396,14 +292,4 @@ main {
 .dropdown-menu .social-links-dropdown {
     display: flex;
     flex-direction: column;
-}
-
-@media (max-width: 768px) {
-    .nav-item-container,
-    .social-links {
-        display: none;
-    }
-    .hamburger-menu {
-        display: block;
-    }
 }
