@@ -11,15 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const fullScreenNavItems = document.querySelectorAll('.full-screen-nav-item');
 
     function animateText(element) {
-        const text = element.innerText.replace('\n', '');
-        element.innerHTML = text.split('').map(letter => {
-            if (letter === ' ') return ' ';
-            return `<span>${letter}>`;
-        }).join('');
-        element.querySelectorAll('span').forEach((span, index) => {
-            span.style.animationDelay = `${index * 0.1}s`;
-        });
-    }
+    const text = element.innerText.replace('\n', '');
+    element.innerHTML = text.split('').map(letter => {
+        if (letter === ' ') return ' ';
+        return `<span>${letter}`;
+    }).join('');
+    element.querySelectorAll('span').forEach((span, index) => {
+        span.style.animationDelay = `${index * 0.1}s`;
+    });
+}
+
 
     function animateElement(element, animationClass) {
         element.classList.add(animationClass);
