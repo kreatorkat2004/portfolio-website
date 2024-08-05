@@ -1,34 +1,70 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const mainContent = document.querySelector('main');
-    const horizontalScrollbar = document.querySelector('.horizontal-scrollbar');
+    const fadeInTextH1 = document.querySelector('.intro h1.fade-in-left-letter-by-letter');
+    const fadeInTextH2 = document.querySelector('.intro h2.fade-in-left-letter-by-letter');
+    const aspiringText = document.querySelector('.intro p.aspiring');
+    const subtitleText = document.querySelector('.intro p.subtitle');
+    const contactButton = document.querySelector('.contact-button');
+    const profilePicture = document.querySelector('.profile-picture');
+    const menuToggle = document.getElementById('menuToggle');
+    const fullScreenMenu = document.getElementById('fullScreenMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const fullScreenNavItems = document.querySelectorAll('.full-screen-nav-item');
     const bubblesBox = document.querySelector('.bubbles-box');
-    const titleElement = document.querySelector('.intro1 h1');
 
-    horizontalScrollbar.innerHTML = '<div style="width:' + mainContent.scrollWidth + 'px"></div>';
+    function animateText(element) {
+        if (!element) return; 
+        const text = element.innerText.replace('\n', '');
+        element.innerHTML = text.split('').map(letter => {
+            return letter === ' ' ? ' ' : `<span>${letter}</span>`;
+        }).join('');
+        element.querySelectorAll('span').forEach((span, index) => {
+            span.style.animationDelay = `${index * 0.1}s`;
+        });
+    }
 
-    horizontalScrollbar.addEventListener('scroll', () => {
-        mainContent.scrollLeft = horizontalScrollbar.scrollLeft;
+    function animateElement(element, animationClass) {
+        if (element) {
+            element.classList.add(animationClass);
+        }
+    }
+
+    animateText(fadeInTextH1);
+    animateText(fadeInTextH2);
+    animateElement(aspiringText, 'fade-in');
+    animateElement(subtitleText, 'fade-in');
+    animateElement(contactButton, 'pop-in');
+    animateElement(profilePicture, 'pop-in');
+
+    menuToggle.addEventListener('click', () => {
+        fullScreenMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        fullScreenNavItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('active');
+            }, index * 100);
+        });
     });
 
-    mainContent.addEventListener('scroll', () => {
-        horizontalScrollbar.scrollLeft = mainContent.scrollLeft;
+    closeMenu.addEventListener('click', () => {
+        fullScreenMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        fullScreenNavItems.forEach(item => {
+            item.classList.remove('active');
+        });
     });
 
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    hamburgerMenu.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('show');
-    });
+    function handleResize() {
+        if (window.innerWidth > 768) {
+            fullScreenMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            fullScreenNavItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+    }
 
-    const fadeInText = document.querySelector('.fade-in-left-letter-by-letter');
-    const text = fadeInText.innerText.replace('\n', ''); 
-    fadeInText.innerHTML = text.split('').map(letter => {
-        if (letter === ' ') return ' ';
-        return `<span>${letter}</span>`;
-    }).join('');
-    fadeInText.querySelectorAll('span').forEach((span, index) => {
-        span.style.animationDelay = `${index * 0.2}s`;
-    });
+    window.addEventListener('resize', handleResize);
+    handleResize();
 
     document.querySelectorAll('.skill-buttons button').forEach(button => {
         button.addEventListener('click', () => {
@@ -36,13 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    showSkills('Languages'); 
+    showSkills('Languages');
 
     function generateBubbles(skills, layout, specialCases = {}) {
+        if (!bubblesBox) return; 
         bubblesBox.innerHTML = '';
 
-        const bubbleWidth = 100; // Adjust this value based on your bubble size
-        const bubbleHeight = 100; // Adjust this value based on your bubble size
+        const bubbleWidth = 100; 
+        const bubbleHeight = 100; 
         const containerWidth = bubblesBox.clientWidth;
         const containerHeight = bubblesBox.clientHeight;
         const startX = (containerWidth - (bubbleWidth * layout[0])) / 2;
@@ -93,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const skillsContainer = document.querySelector('.skills');
         const skillButtons = document.querySelectorAll('.skill-buttons button');
 
-        skillsContainer.innerHTML = ''; 
+        skillsContainer.innerHTML = '';
 
         skillsData[type].sort((a, b) => b.time - a.time).forEach(skill => {
             const skillElement = document.createElement('div');
@@ -106,11 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         skillButtons.forEach(button => {
-            if (button.textContent === type) {
-                button.style.display = 'none';
-            } else {
-                button.style.display = 'inline-block';
-            }
+            button.style.display = button.textContent === type ? 'none' : 'inline-block';
         });
 
         const layouts = {
@@ -122,14 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const specialCases = {
             'Tools': {
-                'Docker': { x: 1, y: 2 } 
+                'Docker': { x: 1, y: 2 }
             },
             'Languages': {
-                'C++': { x: 1, y: 2 } 
+                'C++': { x: 1, y: 2 }
             },
             'Frameworks': {
-                'Node.js': { x: 0.5, y: 1 }, 
-                'React.js': { x: 1.5, y: 1 } 
+                'Node.js': { x: 0.5, y: 1 },
+                'React.js': { x: 1.5, y: 1 }
             }
         };
 
@@ -163,7 +196,6 @@ const skillsData = {
         { name: "Hadoop", time: 1.5, color: "#55B4B0" },
         { name: "Docker", time: 1.5, color: "#E15D44" }
     ],
-
     Libraries: [
         { name: "NumPy", time: 3, color: "#BC243C" },
         { name: "Pandas", time: 3, color: "#BC243C" },

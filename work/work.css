@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+:root {
+    --font-size-base: 16px;
+    --font-size-scale: 0.5vw;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px; 
@@ -34,90 +39,135 @@ body {
 
 header {
     background-color: #000;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
 }
 
 .nav-list {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 60px;
     padding: 0 20px;
     margin: 0;
     list-style: none;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.logo-icon, .nav-icon, .social-icon {
-    filter: grayscale(100%);
-    transition: filter 0.3s, transform 0.3s;
 }
 
 .logo-icon {
-    height: 2.5vw;
+    height: 2em;
     vertical-align: middle;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .nav-item {
     color: #999;
     text-decoration: none;
-    font-size: 1.2em;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
-    flex-shrink: 0;
-    margin-right: 5px;
+    font-size: 0.6em;
+    padding: 8px 12px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .nav-icon {
-    width: 2.5vw;
-    height: 2.5vw;
-    margin-right: 8px;
-    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-text {
+    opacity: 0;
+    transition: opacity 0.3s, color 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: 0.35rem;
 }
 
 .nav-item:hover {
-    background-color: #2A9D8F;
-    color: #fff;
-    border-radius: 4px;
+    color: #2A9D8F;
 }
 
-@media (max-width: 1024px) {
-    .nav-icon {
-        width: 2.2vw;
-        height: 2.2vw;
-    }
+.nav-item:hover .nav-icon {
+    opacity: 0;
 }
 
-@media (max-width: 768px) {
-    .nav-icon {
-        width: 2vw;
-        height: 2vw;
-    }
+.nav-item:hover .nav-text {
+    opacity: 1;
+    color: #2A9D8F;
 }
 
 .social-links {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
 }
 
 .social-links a {
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .social-icon {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 1.2em;
+    height: 1.2em;
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
 }
 
 .social-icon:hover {
     transform: scale(1.2);
     filter: grayscale(0%);
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+    }
+
+    .nav-items.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    .social-links {
+        display: none;
+    }
 }
 
 main {
@@ -387,4 +437,62 @@ h1 {
     .right {
         left: 0%;
     }
+}
+
+.full-screen-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.full-screen-menu.active {
+    display: block;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.full-screen-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.full-screen-nav-item {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.full-screen-nav-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.full-screen-nav-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
