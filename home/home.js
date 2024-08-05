@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitleText = document.querySelector('.intro p.subtitle');
     const contactButton = document.querySelector('.contact-button');
     const profilePicture = document.querySelector('.profile-picture');
-    const navItems = document.querySelector('.nav-items');
     const menuToggle = document.getElementById('menuToggle');
+    const fullScreenMenu = document.getElementById('fullScreenMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const fullScreenNavItems = document.querySelectorAll('.full-screen-nav-item');
 
     function animateText(element) {
         const text = element.innerText.replace('\n', '');
         element.innerHTML = text.split('').map(letter => {
             if (letter === ' ') return ' ';
-            return `<span>${letter}</span>`;
+            return `<span>${letter}>`;
         }).join('');
         element.querySelectorAll('span').forEach((span, index) => {
             span.style.animationDelay = `${index * 0.1}s`;
@@ -30,11 +32,31 @@ document.addEventListener('DOMContentLoaded', () => {
     animateElement(contactButton, 'pop-in');
     animateElement(profilePicture, 'pop-in');
 
+    menuToggle.addEventListener('click', () => {
+        fullScreenMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        fullScreenNavItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('active');
+            }, index * 100);
+        });
+    });
+
+    closeMenu.addEventListener('click', () => {
+        fullScreenMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        fullScreenNavItems.forEach(item => {
+            item.classList.remove('active');
+        });
+    });
+
     function handleResize() {
-        if (window.innerWidth <= 768) {
-            navItems.style.display = 'flex';
-        } else {
-            navItems.style.display = 'flex';
+        if (window.innerWidth > 768) {
+            fullScreenMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            fullScreenNavItems.forEach(item => {
+                item.classList.remove('active');
+            });
         }
     }
 
