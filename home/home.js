@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitleText = document.querySelector('.intro p.subtitle');
     const contactButton = document.querySelector('.contact-button');
     const profilePicture = document.querySelector('.profile-picture');
+    const navItems = document.querySelector('.nav-items');
+    const menuToggle = document.getElementById('menuToggle');
 
     function animateText(element) {
         const text = element.innerText.replace('\n', '');
@@ -27,4 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     animateElement(subtitleText, 'fade-in');
     animateElement(contactButton, 'pop-in');
     animateElement(profilePicture, 'pop-in');
+
+    function handleResize() {
+        if (window.innerWidth <= 768) {
+            navItems.style.display = 'flex';
+        } else {
+            navItems.style.display = 'flex';
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
 });
