@@ -1,0 +1,99 @@
+.about-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: auto;
+  padding: 2vw;
+  padding-top: 80px;
+  padding-bottom: 5vh;
+  position: relative;
+  overflow: auto;
+  min-width: 0;
+  min-height: auto;
+  
+  .left-column,
+  .right-column {
+    flex: 1 1 50%;
+    padding: 2vw;
+  }
+  
+  .intro {
+    margin-top: 5vh;
+    text-align: left;
+    
+    h1 {
+      font-size: calc(3em + 1vw);
+      color: #51e8d6;
+    }
+    
+    p {
+      font-size: calc(1.2em + 0.5vw);
+      margin: 2vh 0;
+      margin-bottom: 2vh;
+    }
+  }
+  
+  .skills-section {
+    h2 {
+      color: #51e8d6;
+    }
+    
+    .skill-buttons {
+      margin: 2vh 0;
+      
+      button {
+        background-color: #2A9D8F;
+        color: #fff;
+        padding: 1vh 2vw;
+        margin: 0 1vw;
+        border: none;
+        border-radius: 0.5vh;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        
+        &:hover {
+          background-color: #CD0021;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  
+  .pop-in {
+    animation: popIn 2s ease forwards;
+  }
+  
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .bubbles-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .left-column,
+    .right-column {
+      flex: 1 0 100%;
+    }
+    
+    .bubbles-box {
+      top: 22.5vh;
+      transform: translateY(-50%);
+    }
+  }
+}

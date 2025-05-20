@@ -1,0 +1,62 @@
+.skills {
+  .skill {
+    margin: 1vh 0;
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5vh;
+    text-align: left;
+    animation: popIn 2s ease-out;
+    position: relative;
+    color: #fff;
+    
+    span {
+      display: block;
+      margin-bottom: 0.5vh;
+      font-size: 1.2em;
+    }
+    
+    .progress-bar {
+      height: 2vh;
+      border-radius: 0.5vh;
+      transition: width 0.3s;
+    }
+  }
+}
+
+.bubble {
+  margin: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), rgba(173, 216, 230, 0.5));
+  box-shadow: 0 0 20px rgba(173, 216, 230, 0.5);
+  position: absolute;
+  animation: upDown 2s ease-in-out infinite alternate;
+  
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

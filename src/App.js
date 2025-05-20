@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import About from './components/About';
+import Work from './components/Work';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
+import './App.scss';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="work" element={<Work />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

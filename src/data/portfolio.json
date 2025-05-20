@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "SignSpeakBot",
+    "description": "Sign Language Practice Bot Application (2023-2024)",
+    "details": [
+      "Built an application leveraging a TensorFlow-based sign language machine learning detector with MediaPipe and OpenCV for hand tracking and gesture recognition to increase user retention by 20%.",
+      "Facilitates individual practice, allowing 30 users to communicate with a bot and improve their sign language skills autonomously."
+    ],
+    "period": "2022-2024",
+    "image": "SignSpeakBot.png",
+    "github": "https://github.com/kreatorkat2004/Sign_Language_Practice_Bot"
+  },
+  {
+    "id": 2,
+    "name": "WingSpot",
+    "description": "Houston Museum of Natural Science Butterfly Identifier Application (2023-2024)",
+    "details": [
+      "Designed a user-centric interface for the Butterfly Identifier app, serving approximately 700 daily users, integrating features like glossary filtering and real-time photo identification, which increased visitor engagement metrics by 40%.",
+      "Developed with GraphQL API, MongoDB, AWS S3, and React Native to implement a scalable front-end, enhancing data processing speed by 50% and improving user experience in real-time interactions."
+    ],
+    "period": "2023-2024",
+    "image": "WingSpot.png",
+    "github": "https://github.com/rice-apps/hmns"
+  },
+  {
+    "id": 3,
+    "name": "BetArbAnalyzr",
+    "description": "Sports Betting Arbitrage Detector (2024)",
+    "details": [
+      "Conducted comprehensive analysis of arbitrage opportunities in sports betting using historical data from 21 seasons, processing over 1 million data points with R, dplyr, and tidyr, and identifying 100+ potential arbitrage opportunities by comparing probabilities derived from betting odds.",
+      "Utilized Python libraries (pandas, NumPy) for data cleaning and normalization, ensuring data integrity, and applied linear programming with lpSolve in R to optimize returns, achieving up to 15% potential ROI in simulations through statistical analysis and optimization techniques."
+    ],
+    "period": "2023-2024",
+    "image": "BetArbAnalyzr.png",
+    "github": "https://github.com/kreatorkat2004/Arbitrage_Detector"
+  },
+  {
+    "id": 4,
+    "name": "TCellViz",
+    "description": "T Cell Analysis (2023)",
+    "details": [
+      "Utilized Seurat and ggplot2 to analyze colorectal cancer T-cell data, generating over 20 UMAP plots and bar charts, enhancing visualization and understanding of T-cell distributions across 6 annotations and 2 conditions.",
+      "Developed automated R scripts for data preprocessing, visualization, and clustering analysis, leveraging Seurat, ggplot2, dplyr, and custom functions to increase analysis efficiency by 30% and ensure reproducibility for ongoing research."
+    ],
+    "period": "2023-2024",
+    "image": "TCellViz.png",
+    "github": "https://github.com/kreatorkat2004/CRC_TCell_Analysis"
+  },
+  {
+    "id": 5,
+    "name": "EquiLens",
+    "description": "Uncovering Biases in California Mortgage Data (2022)",
+    "details": [
+      "Analyzed over 1 million observations from the 2016 California mortgage loan data using R, Seurat, ggplot2, and dplyr, creating 20 UMAP plots, 15 scatter plots, and 10 bar charts to highlight correlations between loan amounts, applicant demographics, and county-level Gini Index measures.",
+      "Identified a positive correlation (R² = 0.50) between applicant income and loan amount, with Asian and White applicants receiving 25% higher loan amounts, and counties with higher Gini Index (above 0.45) and higher minority percentages (above 30%) tend to have 20% higher mean loan amounts."
+    ],
+    "period": "2022",
+    "image": "EquiLens.png",
+    "github": "https://github.com/kreatorkat2004/California_Mortgage_Loan_Bias_Analysis"
+  }
+]

@@ -1,0 +1,17 @@
+.work-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 30px;
+  padding-bottom: 5vh;
+  position: relative;
+  
+  h1 {
+    font-size: 3em;
+    color: #51e8d6;
+    margin-top: 15vh;
+    margin-bottom: 30px;
+  }
+}

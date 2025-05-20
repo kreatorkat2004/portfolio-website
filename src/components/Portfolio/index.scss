@@ -1,0 +1,153 @@
+.portfolio-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 5vh;
+  position: relative;
+  
+  .header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    
+    h1 {
+      color: #51e8d6;
+      font-size: 3em;
+    }
+  }
+  
+  .projects-list {
+    margin-top: 60px;
+    width: 100%;
+    
+    .projects-section {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+      width: 100%;
+      
+      .project-item {
+        display: flex;
+        justify-content: center;
+        
+        .project-card {
+          position: relative;
+          width: 350px;
+          height: 450px;
+          perspective: 1000px;
+          margin: 20px;
+          cursor: pointer;
+          
+          &.flipped {
+            .project-card-front {
+              transform: rotateY(180deg);
+            }
+            
+            .project-card-back {
+              transform: rotateY(0);
+            }
+          }
+          
+          .project-card-front,
+          .project-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transition: transform 0.6s;
+            border-radius: 10px;
+          }
+          
+          .project-card-front {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            color: black;
+            font-size: 1.5em;
+            text-align: center;
+            padding: 10px;
+            
+            .project-info {
+              background-color: rgba(255, 255, 255, 0.7);
+              padding: 10px 20px;
+              border-radius: 5px;
+              margin-top: 20px;
+              
+              span {
+                font-weight: bold;
+              }
+            }
+          }
+          
+          .project-card-back {
+            background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
+            border: 2px solid #333;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+            padding: 20px;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            
+            .project-details {
+              text-align: center;
+              
+              p {
+                margin-bottom: 15px;
+                font-size: 1.1em;
+                
+                &:first-child {
+                  font-weight: bold;
+                  font-size: 1.3em;
+                }
+              }
+              
+              ul {
+                list-style-type: disc;
+                padding-left: 20px;
+                text-align: left;
+                
+                li {
+                  margin-bottom: 10px;
+                  line-height: 1.5;
+                }
+              }
+              
+              .github-button {
+                display: inline-block;
+                margin-top: 15px;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 1em;
+                
+                &:hover {
+                  background-color: #0056b3;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .projects-section {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
