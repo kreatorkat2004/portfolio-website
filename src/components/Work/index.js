@@ -17,7 +17,7 @@ const Work = () => {
       <h1 className="fade-in-left-letter-by-letter" style={{ color: '#51e8d6' }}>
         <AnimatedLetters
           letterClass={letterClass}
-          strArray={['W', 'o', 'r', 'k', ' ', 'E', 'x', 'p', 'e', 'r', 'i', 'e', 'n', 'c', 'e', 's']}
+          strArray={['W', 'o', 'r', 'k', '\u00A0', 'E', 'x', 'p', 'e', 'r', 'i', 'e', 'n', 'c', 'e', 's']}
           idx={15}
         />
       </h1>

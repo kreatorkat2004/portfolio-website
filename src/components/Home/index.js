@@ -7,7 +7,7 @@ import profilePic from '../../assets/images/me.png';
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const helloArray = ['H', 'e', 'l', 'l', 'o'];
-  const nameArray = ['I', '\'', 'm', ' ', 'A', 'a', 'r', 'o', 'n', ' ', 'W', 'u'];
+  const nameArray = ['I', '\'', 'm', '\u00A0', 'A', 'a', 'r', 'o', 'n', '\u00A0', 'W', 'u'];
 
   useEffect(() => {
     setTimeout(() => {

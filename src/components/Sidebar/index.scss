@@ -30,7 +30,7 @@ header {
   .nav-item {
     color: #999;
     text-decoration: none;
-    font-size: 0.6em;
+    font-size: 1.5em;
     padding: 8px 12px;
     transition: color 0.3s;
     display: flex;
@@ -76,7 +76,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
-    font-size: 0.35rem;
+    font-size: 0.8rem;
   }
   
   .social-links {
@@ -85,16 +85,23 @@ header {
     
     a {
       margin-left: 8px;
+      color: #999;
+    
+      &:hover {
+        color: #51e8d6;
+      }
     }
   }
   
   .social-icon {
     width: 2em;
     height: 2em;
-    transition: filter 0.3s, transform 0.3s;
-    
+    color: #999; 
+    transition: filter 0.3s, transform 0.3s, color 0.3s; 
+  
     &:hover {
       transform: scale(1.2);
+      color: #51e8d6; 
     }
   }
   

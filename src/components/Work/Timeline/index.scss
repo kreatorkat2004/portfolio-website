@@ -1,8 +1,7 @@
-/* Work Experience Widget */
 .work-experience-widget {
   max-width: 1400px;
   margin: 0 auto 50px auto;
-  margin-top: 200px;
+  margin-top: 80px; 
   padding: 50px;
   background: rgba(20, 20, 30, 0.95);
   border-radius: 20px;
@@ -13,7 +12,7 @@
 
 .widget-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 20px; 
   
   h2 {
     color: #51e8d6;
@@ -153,7 +152,7 @@
 /* Media queries - Responsive */
 @media screen and (max-width: 1200px) {
   .work-experience-widget {
-    margin: 150px 20px 40px 20px;
+    margin: 20px 20px 40px 20px; /* Reduced top margin from 150px to 20px */
     padding: 40px;
     max-width: none;
   }
@@ -163,8 +162,12 @@
     gap: 25px;
   }
   
-  .widget-header h2 {
-    font-size: 3rem;
+  .widget-header {
+    margin-bottom: 15px; /* Reduced spacing for tablet */
+    
+    h2 {
+      font-size: 3rem;
+    }
   }
   
   .experience-info {
@@ -194,7 +197,7 @@
 
 @media screen and (max-width: 768px) {
   .work-experience-widget {
-    margin: 120px 15px 30px 15px;
+    margin: 15px 15px 30px 15px; /* Reduced top margin from 120px to 15px */
     padding: 30px;
   }
   
@@ -203,8 +206,12 @@
     gap: 25px;
   }
   
-  .widget-header h2 {
-    font-size: 2.5rem;
+  .widget-header {
+    margin-bottom: 15px; /* Reduced spacing for mobile */
+    
+    h2 {
+      font-size: 2.5rem;
+    }
   }
   
   .experience-header {
@@ -249,12 +256,16 @@
 
 @media screen and (max-width: 480px) {
   .work-experience-widget {
-    margin: 100px 10px 20px 10px;
+    margin: 10px 10px 20px 10px; /* Reduced top margin from 100px to 10px */
     padding: 20px;
   }
   
-  .widget-header h2 {
-    font-size: 2rem;
+  .widget-header {
+    margin-bottom: 10px; /* Reduced spacing for small mobile */
+    
+    h2 {
+      font-size: 2rem;
+    }
   }
   
   .experience-header {

@@ -70,9 +70,9 @@ const Contact = () => {
         <section className="contact-section">
           <h1 className="fade-in-left-letter-by-letter" style={{ color: '#51e8d6', fontSize: '2.5em' }}>
             <AnimatedLetters
-              letterClass={letterClass}
-              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'M', 'e']}
-              idx={15}
+            letterClass={letterClass}
+            strArray={['C', 'o', 'n', 't', 'a', 'c', 't', '\u00A0', 'M', 'e']}
+            idx={15}
             />
           </h1>
           <form ref={formRef} onSubmit={handleSubmit} className="pop-in">

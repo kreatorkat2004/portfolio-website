@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import AnimatedLetters from '../../AnimatedLetters';
 import './index.scss';
 import workData from '../../../data/work.json';
 
 const Timeline = () => {
+  const [letterClass, setLetterClass] = useState('text-animate');
   const [expandedItems, setExpandedItems] = useState({});
-
+    
   const toggleDescription = (id) => {
     setExpandedItems({
       ...expandedItems,
@@ -20,12 +22,31 @@ const Timeline = () => {
     setExpandedItems(initialState);
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 3000);
+  }, []);
+
   return (
-    <div className="work-experience-widget">
-      <div className="widget-header">
-        <h2>Work Experience</h2>
-      </div>
-      <div className="experience-list">
+    <div>
+      <h1 
+        className="fade-in-left-letter-by-letter" 
+        style={{ 
+          color: '#51e8d6', 
+          fontSize: '2.5em', 
+          textAlign: 'center', 
+          marginBottom: '0.5rem' 
+        }}
+      >
+        <AnimatedLetters
+          letterClass={letterClass}
+          strArray={['W', 'o', 'r', 'k', '\u00A0', 'E', 'x', 'p', 'e', 'r', 'i', 'e', 'n', 'c', 'e', 's']}
+          idx={15}
+        />
+      </h1>
+      <div className="work-experience-widget">
+        <div className="experience-list">
         {workData.map((item) => (
           <div key={item.id} className="experience-container">
             <div className="experience-header">
@@ -61,6 +82,8 @@ const Timeline = () => {
             </div>
           </div>
         ))}
+              
+        </div>
       </div>
     </div>
   );

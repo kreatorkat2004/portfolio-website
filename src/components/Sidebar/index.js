@@ -8,12 +8,14 @@ import {
   faProjectDiagram, 
   faEnvelope,
   faBars,
-  faX
+  faX,
+  faChess
 } from '@fortawesome/free-solid-svg-icons';
 import { 
   faLinkedin, 
   faGithub, 
-  faInstagram 
+  faInstagram,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import './index.scss';
 import LogoImg from '../../assets/images/E.png';
@@ -68,7 +70,7 @@ const Sidebar = () => {
               <FontAwesomeIcon icon={faInstagram} className="social-icon" />
             </a>
             <a href="https://www.chess.com/member/kreatorkat123" target="_blank" rel="noreferrer" aria-label="Chess.com">
-              <img src="/images/navbar_images/chess.png" alt="Chess.com" className="social-icon" />
+              <FontAwesomeIcon icon={faYoutube} className="social-icon" />
             </a>
           </li>
         </ul>
