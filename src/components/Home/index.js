@@ -27,15 +27,15 @@ const Home = () => {
             />
           </h1>
           <br />
-          <h2>
+          <h2 className="name-line">
             <AnimatedLetters 
               letterClass={letterClass}
               strArray={nameArray}
               idx={22}
             />
           </h2>
-          <p className="aspiring">software engineer and data scientist</p>
-          <p className="subtitle">Computer Science and Statistics, 2026 Rice University</p>
+          <p className="aspiring">software engineer and data scientist.</p>
+          <p className="subtitle">Computer Science & Statistics & Data Science, 2026 at Rice University</p>
         </div>
         <div className="contact-container">
           <Link to="/contact" className="contact-button">Contact Me</Link>

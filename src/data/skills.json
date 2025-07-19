@@ -1,38 +1,143 @@
 {
   "Languages": [
-    { "name": "Python", "time": 4, "color": "#34568B" },
-    { "name": "Java", "time": 4, "color": "#FF6F61" },
-    { "name": "SQL", "time": 4, "color": "#6B5B95" },
-    { "name": "R", "time": 3, "color": "#88B04B" },
-    { "name": "JavaScript", "time": 3, "color": "#F7CAC9" },
-    { "name": "HTML/CSS", "time": 3, "color": "#92A8D1" },
-    { "name": "C++", "time": 1.5, "color": "#955251" }
+    {
+      "name": "Java",
+      "time": 4.5,
+      "color": "#ff4800"
+    },
+    {
+      "name": "Python",
+      "time": 5,
+      "color": "#ff6000"
+    },
+    {
+      "name": "JavaScript",
+      "time": 4,
+      "color": "#ff7900"
+    },
+    {
+      "name": "TypeScript",
+      "time": 4,
+      "color": "#ff9100"
+    },
+    {
+      "name": "SQL",
+      "time": 5,
+      "color": "#ffaa00"
+    },
+    {
+      "name": "HTML5",
+      "time": 4,
+      "color": "#ffc300"
+    },
+    {
+      "name": "CSS",
+      "time": 4,
+      "color": "#ffd60a"
+    },
+    {
+      "name": "C",
+      "time": 1.5,
+      "color": "#e76f51"
+    },
+    {
+      "name": "Go",
+      "time": 1,
+      "color": "#f4a261"
+    },
+    {
+      "name": "R",
+      "time": 3,
+      "color": "#e9c46a"
+    }
   ],
-  "Frameworks": [
-    { "name": "Django", "time": 3, "color": "#B565A7" },
-    { "name": "Flask", "time": 2, "color": "#009B77" },
-    { "name": "Springboot", "time": 1.5, "color": "#DD4124" },
-    { "name": "Node.js", "time": 1.5, "color": "#D65076" },
-    { "name": "React.js", "time": 1.5, "color": "#45B8AC" }
+  "Libraries/Frameworks": [
+    {
+      "name": "Spring Boot",
+      "time": 2.5,
+      "color": "#ff0a54"
+    },
+    {
+      "name": "ReactJS",
+      "time": 2.5,
+      "color": "#ff477e"
+    },
+    {
+      "name": "NextJS",
+      "time": 2,
+      "color": "#ff7096"
+    },
+    {
+      "name": "NodeJS",
+      "time": 2.5,
+      "color": "#ff8fab"
+    },
+    {
+      "name": "PostgreSQL",
+      "time": 4,
+      "color": "#fbb1bd"
+    },
+    {
+      "name": "MongoDB",
+      "time": 1.5,
+      "color": "#cf0060"
+    },
+    {
+      "name": "VueJS",
+      "time": 1,
+      "color": "#d62828"
+    },
+    {
+      "name": "Flask",
+      "time": 3,
+      "color": "#bc4749"
+    }
   ],
   "Tools": [
-    { "name": "PostgreSQL", "time": 3, "color": "#7FCDCD" },
-    { "name": "PowerBI", "time": 3, "color": "#8BC34A" },
-    { "name": "Git", "time": 2, "color": "#5B5EA6" },
-    { "name": "AWS", "time": 1.5, "color": "#9B2335" },
-    { "name": "Spark", "time": 1.5, "color": "#DFCFBE" },
-    { "name": "Hadoop", "time": 1.5, "color": "#55B4B0" },
-    { "name": "Docker", "time": 1.5, "color": "#E15D44" }
-  ],
-  "Libraries": [
-    { "name": "NumPy", "time": 3, "color": "#BC243C" },
-    { "name": "Pandas", "time": 3, "color": "#BC243C" },
-    { "name": "Matplotlib", "time": 2, "color": "#C3447A" },
-    { "name": "Plotly", "time": 2, "color": "#C3447A" },
-    { "name": "Shiny", "time": 2, "color": "#C3447A" },
-    { "name": "Ggplot", "time": 2, "color": "#C3447A" },
-    { "name": "PyTorch", "time": 1.5, "color": "#98B4D4" },
-    { "name": "Scikit-learn", "time": 1.5, "color": "#98B4D4" },
-    { "name": "TensorFlow", "time": 1.5, "color": "#98B4D4" }
+    {
+      "name": "AWS",
+      "time": 2.5,
+      "color": "#582f0e"
+    },
+    {
+      "name": "Git",
+      "time": 3,
+      "color": "#7f4f24"
+    },
+    {
+      "name": "Docker",
+      "time": 2.5,
+      "color": "#936639"
+    },
+    {
+      "name": "Databricks",
+      "time": 1,
+      "color": "#a68a64"
+    },
+    {
+      "name": "Snowflake",
+      "time": 1,
+      "color": "#b6ad90"
+    },
+    {
+      "name": "Keystone",
+      "time": 1,
+      "color": "#c2c5aa"
+    },
+    {
+      "name": "Jupyter Notebook",
+      "time": 3.5,
+      "color": "#a4ac86"
+    },
+    {
+      "name": "PowerBI",
+      "time": 4,
+      "color": "#656d4a"
+    },
+    {
+      "name": "Jira",
+      "time": 3,
+      "color": "#414833"
+    }
   ]
 }

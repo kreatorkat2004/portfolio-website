@@ -29,11 +29,6 @@ const Portfolio = () => {
               <div className="project-card-back">
                 <div className="project-details">
                   <p>{project.description}</p>
-                  <ul>
-                    {project.details.map((detail, index) => (
-                      <li key={index}>{detail}</li>
-                    ))}
-                  </ul>
                   <p>{project.period}</p>
                   <a 
                     href={project.github} 

@@ -20,10 +20,11 @@
     text-align: left; 
     
     h1, h2 {
-      font-size: 2em; 
+      font-size: 4em; 
       color: #fff;
       font-weight: normal;
-      margin-bottom: 1vh; 
+      margin-bottom: 3vh; 
+      line-height: 1.2;
     }
     
     h1 {
@@ -31,18 +32,23 @@
     }
     
     h2 {
-      word-spacing: 0.1em;
+      word-spacing: 0.5em;
+      margin-top: 0.1vh !important;
     }
     
-    p.aspiring, p.subtitle {
+    p.aspiring {
       font-family: 'Roboto Slab', serif;
-      font-size: 1.5em; 
+      font-size: 2em !important; 
       line-height: 1.5em;
       color: #fff;
+      margin-top: 2vh;
     }
-    
+
     p.subtitle {
-      font-size: 0.9em; 
+      font-family: 'Roboto Slab', serif;
+      font-size: 1em; 
+      line-height: 1.5em;
+      color: #fff;
       margin-top: 2vh;
     }
   }

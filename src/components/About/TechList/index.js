@@ -12,30 +12,28 @@ const TechList = ({ skills, currentType }) => {
     
     bubblesBox.innerHTML = '';
     
-    const layouts = {
-      'Libraries': [3, 3, 3],
-      'Tools': [3, 3, 2],
-      'Languages': [3, 3, 2],
-      'Frameworks': [3, 2]
-    };
+  const layouts = {
+    'Libraries/Frameworks': [3, 3, 3], 
+    'Tools': [3, 3, 2],
+    'Languages': [3, 3, 2]
+  };
 
-    const specialCases = {
-      'Tools': {
-        'Docker': { x: 1, y: 2 }
-      },
-      'Languages': {
-        'C++': { x: 1, y: 2 }
-      },
-      'Frameworks': {
-        'Node.js': { x: 0.5, y: 1 },
-        'React.js': { x: 1.5, y: 1 }
-      }
-    };
+  const specialCases = {
+    'Tools': {
+      'Docker': { x: 1, y: 2 }
+    },
+    'Languages': {
+      'C++': { x: 1, y: 2 }
+    },
+    'Libraries/Frameworks': { 
+      'Node.js': { x: 0.5, y: 1 },
+      'React.js': { x: 1.5, y: 1 }
+    }
+  };
     
     const layout = layouts[currentType];
     const specialCase = specialCases[currentType] || {};
     
-    // Bubble generation logic adapted from your original code
     let bubbleWidth;
     if (window.innerWidth > 768) {
       bubbleWidth = bubblesBox.clientWidth / layout[0] / 2;

@@ -102,21 +102,28 @@ header {
     display: none;
     cursor: pointer;
     font-size: 30px;
+    color: white; 
   }
   
   .full-screen-menu {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     
     &.active {
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
     
     .close-menu {
@@ -126,31 +133,35 @@ header {
       background: none;
       border: none;
       color: white;
-      font-size: 24px;
+      font-size: 2rem;
       cursor: pointer;
+      
+      &:hover {
+        color: #51e8d6;
+      }
     }
     
     .full-screen-nav {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+      gap: 2rem;
       
       .full-screen-nav-item {
         display: flex;
         align-items: center;
+        gap: 1rem;
         color: white;
         text-decoration: none;
-        font-size: 24px;
-        margin: 20px 0;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.3s, transform 0.3s;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+        opacity: 1; 
+        transform: none; 
+        
+        &:hover {
+          color: #51e8d6;
+        }
         
         &.active {
-          opacity: 1;
-          transform: translateY(0);
           color: #51e8d6;
         }
         
