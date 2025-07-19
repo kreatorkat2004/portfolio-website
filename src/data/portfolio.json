@@ -2,70 +2,70 @@
   {
     "id": 1,
     "name": "Unity",
-    "description": "a",
+    "description": "ReactJS, JWT, Docker",
     "image": "Unity.png",
     "github": "https://unitysvc.com/"
   },
     {
     "id": 2,
     "name": "SignSpeakBot",
-    "description": "a",
+    "description": "Python, Scikit-learn, Pandas",
     "image": "SignSpeakBot.png",
     "github": "https://github.com/kreatorkat2004/Sign_Language_Practice_Bot"
   },
   {
     "id": 3,
     "name": "EagleNestTutoring",
-    "description": "a",
+    "description": "Spring Boot, PostgreSQL, VueJS",
     "image": "EagleNestTutoring.png",
     "github": "https://github.com/kreatorkat2004/EagleNestTutoring"
   },
   {
     "id": 4,
     "name": "WingSpot",
-    "description": "a",
+    "description": "NodeJS, GraphQL, MongoDB",
     "image": "WingSpot.png",
     "github": "https://github.com/rice-apps/hmns"
   },
   {
     "id": 5,
     "name": "VolunteerTrackingHours",
-    "description": "a",
+    "description": "ReactJS, PostgreSQL, Spring Boot",
     "image": "VolunteerTrackingHours.png",
     "github": "https://github.com/kreatorkat2004/VolunteerTrackingHours"
   },
   {
     "id": 6,
     "name": "BetArbAnalyzr",
-    "description": "a",
+    "description": "Python, R, lpSolve",
     "image": "BetArbAnalyzr.png",
     "github": "https://github.com/kreatorkat2004/Arbitrage_Detector"
   },
   {
     "id": 7,
     "name": "EquiLens",
-    "description": "a",
+    "description": "R, SQLite, dplyr",
     "image": "EquiLens.png",
     "github": "https://github.com/kreatorkat2004/California_Mortgage_Loan_Bias_Analysis"
   },
   {
     "id": 8,
     "name": "DualCompression",
-    "description": "a",
+    "description": "Python, PyTorch, NumPy",
     "image": "DualCompression.png",
     "github": "https://github.com/kreatorkat2004/DualCompression"
   },
   {
     "id": 9,
     "name": "BaseballERAPredictor",
-    "description": "a",
+    "description": "R, tidyverse, caret",
     "image": "BaseballERAPredictor.png",
     "github": "https://github.com/kreatorkat2004/baseball-ERA-prediction"
   },
     {
     "id": 10,
     "name": "TCellViz",
-    "description": "a",
+    "description": "R, Seurat, ggplot2",
     "image": "TCellViz.png",
     "github": "https://github.com/kreatorkat2004/CRC_TCell_Analysis"
   }

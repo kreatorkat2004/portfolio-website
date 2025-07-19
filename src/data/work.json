@@ -8,7 +8,7 @@
     "logo": "SMBC.png",
     "side": "left",
     "description": [
-      "Resolved 2+ bugs per sprint by applying structured debugging in Python and Django, reducing pre-release defects by 40%; delivered production-grade features in Actimize IFM-X and Customer Remittance Portal with zero issues",
+      "Resolved 2+ bugs per sprint by applying structured debugging in Python and Django, reducing pre-release defects; delivered production-grade features in Actimize IFM-X and Customer Remittance Portal with zero issues",
       "Optimized data reconciliation processes by creating PostgreSQL tables to log TWS outcomes for improved observability",
       "Enhanced system design by contributing to Architecture Governance Committee reviews; supported projects including Redis event log migration, Docker containerization, and refactoring Django views to decouple HTML rendering logic"
     ]
@@ -35,8 +35,8 @@
     "logo": "MDAnderson.png",
     "side": "left",
     "description": [
-      "Developed CliPP-on-Web, a clonal structure identification tool using penalized optimization, and DeMixSC-on-Web, a deconvolution framework using single-cell sequencing, utilizing Python, R Shiny, HTML5/CSS, and JavaScript",
-      "Presented at AACR, published bioinformatics.mdanderson.org/apps/CliPP, co-authored Nature Genomics publication"
+      "Developed CliPP-on-Web, a clonal structure identification tool using penalized optimization, and DeMixSC-on-Web, a deconvolution framework using single-cell sequencing, utilizing Python, R Shiny, and presented the tools at AACR",
+      "Implemented deep learning models using TensorFlow and PyTorch to predict TmS, TmiS, sML, and p53 status, resulting in a 15% increase in prediction accuracy for personalized treatment in oncology research."
     ]
   },
   {
@@ -48,7 +48,7 @@
     "logo": "WebstaurantStore.png",
     "side": "right",
     "description": [
-      "Reduced 3TB SQL database to 500GB using Visual Studio, improving query speed by 65%",
+      "Reduced 3TB SQL database to 500GB using Visual Studio, improving query speed",
       "Created optimized database workflow for 20+ developers, cutting setup time from 4 hours to 30 minutes"
     ]
   },

@@ -21,38 +21,47 @@ const Timeline = () => {
   }, []);
 
   return (
-    <div className="timeline">
-      {workData.map((item) => (
-        <div key={item.id} className={`container ${item.side}`}>
-          <span className="time-period">{item.period}</span>
-          <div className="circle-img">
-            <img 
-              src={`/images/work_images/${item.logo}`} 
-              alt={item.company} 
-            />
+    <div className="work-experience-widget">
+      <div className="widget-header">
+        <h2>Work Experience</h2>
+      </div>
+      <div className="experience-list">
+        {workData.map((item) => (
+          <div key={item.id} className="experience-container">
+            <div className="experience-header">
+              <div className="company-logo">
+                <img
+                  src={`/images/work_images/${item.logo}`}
+                  alt={item.company}
+                />
+              </div>
+              <div className="experience-info">
+                <h3 className="position" style={{ color: item.color }}>
+                  {item.position}
+                </h3>
+                <h4 className="company">{item.company}</h4>
+                <span className="time-period">{item.period}</span>
+              </div>
+            </div>
+            <div className="experience-content">
+              <ul
+                className="description"
+                style={{ display: expandedItems[item.id] ? 'block' : 'none' }}
+              >
+                {item.description.map((desc, index) => (
+                  <li key={index}>{desc}</li>
+                ))}
+              </ul>
+              <button
+                className="see-more-btn"
+                onClick={() => toggleDescription(item.id)}
+              >
+                {expandedItems[item.id] ? 'See Less' : 'See More'}
+              </button>
+            </div>
           </div>
-          <div className="content">
-            <h2 className="position" style={{ color: item.color }}>
-              {item.position}
-            </h2>
-            <h3 className="company">{item.company}</h3>
-            <ul 
-              className="description" 
-              style={{ display: expandedItems[item.id] ? 'block' : 'none' }}
-            >
-              {item.description.map((desc, index) => (
-                <li key={index}>{desc}</li>
-              ))}
-            </ul>
-            <button 
-              className="see-more-btn" 
-              onClick={() => toggleDescription(item.id)}
-            >
-              {expandedItems[item.id] ? 'See Less' : 'See More'}
-            </button>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

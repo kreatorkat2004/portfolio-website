@@ -5,36 +5,45 @@ import portfolioData from '../../data/portfolio.json';
 
 const Portfolio = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
-  
+  const [flippedCards, setFlippedCards] = useState({});
+
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 3000);
   }, []);
 
+  const handleCardClick = (projectId) => {
+    setFlippedCards(prev => ({
+      ...prev,
+      [projectId]: !prev[projectId]
+    }));
+  };
+
   const renderPortfolio = () => {
     return (
       <ul className="projects-section">
         {portfolioData.map((project) => (
           <li key={project.id} className="project-item">
-            <div className="project-card">
-              <div 
-                className="project-card-front" 
+            <div 
+              className={`project-card ${flippedCards[project.id] ? 'flipped' : ''}`}
+              onClick={() => handleCardClick(project.id)}
+            >
+              <div
+                className="project-card-front"
                 style={{ backgroundImage: `url('/portfolio/${project.image}')` }}
               >
-                <div className="project-info">
-                  <span>{project.name}</span>
-                </div>
               </div>
               <div className="project-card-back">
                 <div className="project-details">
+                  <p>{project.name}</p>
                   <p>{project.description}</p>
-                  <p>{project.period}</p>
-                  <a 
-                    href={project.github} 
-                    className="github-button" 
-                    target="_blank" 
+                  <a
+                    href={project.github}
+                    className="github-button"
+                    target="_blank"
                     rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     View on GitHub
                   </a>
@@ -50,8 +59,8 @@ const Portfolio = () => {
   return (
     <div className="container portfolio-page">
       <section className="header">
-        <h1 
-          className="fade-in-left-letter-by-letter" 
+        <h1
+          className="fade-in-left-letter-by-letter"
           style={{ color: '#51e8d6', fontSize: '3em' }}
         >
           <AnimatedLetters
