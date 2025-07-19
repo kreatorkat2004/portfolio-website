@@ -7,7 +7,7 @@ import profilePic from '../../assets/images/me.png';
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const helloArray = ['H', 'e', 'l', 'l', 'o'];
-  const nameArray = ['I', '\'', 'm', '\u00A0', 'A', 'a', 'r', 'o', 'n', '\u00A0', 'W', 'u'];
+  const nameArray = ['I', '\'', 'm', '\u2009', 'A', 'a', 'r', 'o', 'n', '\u2009', 'W', 'u'];
 
   useEffect(() => {
     setTimeout(() => {
@@ -34,7 +34,10 @@ const Home = () => {
               idx={22}
             />
           </h2>
-          <p className="aspiring">software engineer and data scientist.</p>
+          <p className="aspiring">software engineer</p>
+          <p className="aspiring">data scientist</p>
+          <p className="aspiring">machine learning engineer</p>
+          <p className="aspiring">quantitative trader</p>
           <p className="subtitle">Computer Science & Statistics & Data Science, 2026 at Rice University</p>
         </div>
         <div className="contact-container">

@@ -36,7 +36,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Replace with your actual emailJS service details
     emailjs
       .sendForm(
         'YOUR_SERVICE_ID', 

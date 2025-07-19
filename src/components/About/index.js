@@ -25,12 +25,12 @@ const About = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={['A', 'b', 'o', 'u', 't', ' ', 'M', 'e']}
+              strArray={['A', 'b', 'o', 'u', 't', '\u00A0', 'M', 'e']}
               idx={15}
             />
           </h1>
           <p className="pop-in">
-            I am a dedicated software engineer and data analyst with the ability to work in collaborative environments, 
+            I am a dedicated student looking at becoming a software engineer, data scientist, machine learning engineer, and quantitative trader with the ability to work in collaborative environments, 
             navigate complex challenges, and a passion for leveraging technology to solve real-world problems.
           </p>
         </section>

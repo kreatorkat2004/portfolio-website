@@ -149,10 +149,9 @@
   }
 }
 
-/* Media queries - Responsive */
 @media screen and (max-width: 1200px) {
   .work-experience-widget {
-    margin: 20px 20px 40px 20px; /* Reduced top margin from 150px to 20px */
+    margin: 20px 20px 40px 20px;
     padding: 40px;
     max-width: none;
   }
@@ -163,7 +162,7 @@
   }
   
   .widget-header {
-    margin-bottom: 15px; /* Reduced spacing for tablet */
+    margin-bottom: 15px;
     
     h2 {
       font-size: 3rem;
@@ -197,7 +196,7 @@
 
 @media screen and (max-width: 768px) {
   .work-experience-widget {
-    margin: 15px 15px 30px 15px; /* Reduced top margin from 120px to 15px */
+    margin: 15px 15px 30px 15px; 
     padding: 30px;
   }
   
@@ -207,7 +206,7 @@
   }
   
   .widget-header {
-    margin-bottom: 15px; /* Reduced spacing for mobile */
+    margin-bottom: 15px;
     
     h2 {
       font-size: 2.5rem;
@@ -256,12 +255,12 @@
 
 @media screen and (max-width: 480px) {
   .work-experience-widget {
-    margin: 10px 10px 20px 10px; /* Reduced top margin from 100px to 10px */
+    margin: 10px 10px 20px 10px; 
     padding: 20px;
   }
   
   .widget-header {
-    margin-bottom: 10px; /* Reduced spacing for small mobile */
+    margin-bottom: 10px; 
     
     h2 {
       font-size: 2rem;
